@@ -37,7 +37,7 @@ public class TransactionActivity extends AppCompatActivity {
         dbHelper =  new DatabaseHelper(getApplicationContext());
 //        Toolbar toolbar = findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
-//        clear();
+        clear();
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,6 +99,7 @@ public class TransactionActivity extends AppCompatActivity {
         EditText editDiscount = findViewById(R.id.editDiscount);
         EditText editBalance = findViewById(R.id.editBalance);
         EditText editPaid = findViewById(R.id.editPaid);
+        EditText editOther = findViewById(R.id.editOther);
         editName.setText("");
         editPhone.setText("");
         editTotal.setText("0");
@@ -106,6 +107,7 @@ public class TransactionActivity extends AppCompatActivity {
         editFall.setText("0");
         editKutchu.setText("0");
         editBlouse.setText("0");
+        editOther.setText("0");
         editAdvance.setText("0");
         editPaid.setText("0");
         editBalance.setText("0");

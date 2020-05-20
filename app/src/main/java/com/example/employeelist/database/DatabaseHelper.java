@@ -113,9 +113,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db=this.getReadableDatabase();
         List<TransactionModel> list = new ArrayList<>();
         Cursor cursor = db.query(TABLE_NAME, null, null, null, null, null, sortBy, null);
-        Log.d("DB","LOOKING FOR DATA");
+//        Log.d("DB","LOOKING FOR DATA");
         if (cursor.moveToFirst()) {
-            Log.d("DB","FOUND DATA");
+//            Log.d("DB","FOUND DATA");
             do {
                 TransactionModel t = new TransactionModel();
                 t.setId(cursor.getInt(cursor.getColumnIndex(ID)));
