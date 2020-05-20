@@ -28,6 +28,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String FALL_PRICE = "fall_price";
     public static final String KUTCHU_PRICE = "kutchu_price";
     public static final String BLOUSE_PRICE = "blouse_price";
+    public static final String OTHER_PRICE = "other_price";
     public static final String TOTAL_PRICE = "total_price";
     public static final String ADVANCE_PAID = "advance_paid";
     public static final String DISCOUNT = "discount";
@@ -39,17 +40,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     static final String DB_NAME = "BOUTIQUE.DB";
 
     // database version
-    static final int DB_VERSION = 5;
+    static final int DB_VERSION = 7;
 
     // Creating table query
     private static String CREATE_TABLE = "create table " + TABLE_NAME + " (id"
             + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
             CUSTOMERNAME + " TEXT NOT NULL, " +
-            PHONE + " TEXT NOT NULL UNIQUE," +
+            PHONE + " TEXT NOT NULL ," +
             SAREE_PRICE + " NUMBER NOT NULL," +
             FALL_PRICE + " NUMBER NOT NULL," +
             KUTCHU_PRICE + " NUMBER NOT NULL," +
             BLOUSE_PRICE + " NUMBER NOT NULL," +
+            OTHER_PRICE + " NUMBER NOT NULL," +
             TOTAL_PRICE + " NUMBER NOT NULL," +
             ADVANCE_PAID + " NUMBER NOT NULL," +
             DISCOUNT + " NUMBER NOT NULL," +
@@ -84,6 +86,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(FALL_PRICE, t.getFall());
         contentValues.put(KUTCHU_PRICE, t.getKutchu());
         contentValues.put(BLOUSE_PRICE, t.getBlouse());
+        contentValues.put(OTHER_PRICE, t.getOther());
         contentValues.put(TOTAL_PRICE, t.getBlouse());
         contentValues.put(DISCOUNT, t.getDiscount());
         contentValues.put(ADVANCE_PAID, t.getAdvance());
@@ -122,6 +125,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 t.setFall(cursor.getInt(cursor.getColumnIndex(FALL_PRICE)));
                 t.setKutchu(cursor.getInt(cursor.getColumnIndex(KUTCHU_PRICE)));
                 t.setBlouse(cursor.getInt(cursor.getColumnIndex(BLOUSE_PRICE)));
+                t.setOther(cursor.getInt(cursor.getColumnIndex(OTHER_PRICE)));
                 t.setPaid(cursor.getInt(cursor.getColumnIndex(AMOUNT_PAID)));
                 t.setDiscount(cursor.getInt(cursor.getColumnIndex(DISCOUNT)));
                 t.setAdvance(cursor.getInt(cursor.getColumnIndex(ADVANCE_PAID)));

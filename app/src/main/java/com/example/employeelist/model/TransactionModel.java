@@ -10,6 +10,7 @@ public class TransactionModel {
     private int fall;
     private int kutchu;
     private int blouse;
+    private int other;
     private int total;
     private int advance;
     private int paid;
@@ -120,6 +121,14 @@ public class TransactionModel {
         return this.created_date;
     }
 
+    public int getOther() {
+        return other;
+    }
+
+    public void setOther(int other) {
+        this.other = other;
+    }
+
     @Override
     public String toString() {
         return "TransactionModel{" +
@@ -130,6 +139,7 @@ public class TransactionModel {
                 ", fall=" + fall +
                 ", kutchu=" + kutchu +
                 ", blouse=" + blouse +
+                ", other=" + other +
                 ", total=" + total +
                 ", advance=" + advance +
                 ", paid=" + paid +

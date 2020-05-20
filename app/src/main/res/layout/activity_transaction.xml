@@ -62,6 +62,16 @@
             android:inputType="number" />
 
         <EditText
+            android:id="@+id/editOther"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:digits="0123456789"
+            android:ems="10"
+            android:hint="Other Price"
+            android:inputType="number" />
+
+        <EditText
             android:id="@+id/editFall"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
