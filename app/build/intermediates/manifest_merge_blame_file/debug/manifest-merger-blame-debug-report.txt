@@ -18,7 +18,7 @@
 12-->C:\Users\babur\AndroidStudioProjects\boutique\app\src\main\AndroidManifest.xml:6:22-76
 13
 14    <application
-14-->C:\Users\babur\AndroidStudioProjects\boutique\app\src\main\AndroidManifest.xml:8:5-32:19
+14-->C:\Users\babur\AndroidStudioProjects\boutique\app\src\main\AndroidManifest.xml:8:5-48:19
 15        android:allowBackup="true"
 15-->C:\Users\babur\AndroidStudioProjects\boutique\app\src\main\AndroidManifest.xml:9:9-35
 16        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -37,9 +37,9 @@
 23-->C:\Users\babur\AndroidStudioProjects\boutique\app\src\main\AndroidManifest.xml:15:9-40
 24        android:usesCleartextTraffic="true" >
 24-->C:\Users\babur\AndroidStudioProjects\boutique\app\src\main\AndroidManifest.xml:14:9-44
-25        <activity android:name="com.example.employeelist.ui.MainActivity" >
+25        <activity android:name="com.example.employeelist.ui.DashboardActivity" >
 25-->C:\Users\babur\AndroidStudioProjects\boutique\app\src\main\AndroidManifest.xml:16:9-23:20
-25-->C:\Users\babur\AndroidStudioProjects\boutique\app\src\main\AndroidManifest.xml:16:19-50
+25-->C:\Users\babur\AndroidStudioProjects\boutique\app\src\main\AndroidManifest.xml:16:19-55
 26            <intent-filter>
 26-->C:\Users\babur\AndroidStudioProjects\boutique\app\src\main\AndroidManifest.xml:17:13-22:29
 27                <action android:name="android.intent.action.MAIN" />
@@ -54,9 +54,9 @@
 30-->C:\Users\babur\AndroidStudioProjects\boutique\app\src\main\AndroidManifest.xml:21:27-74
 31            </intent-filter>
 32        </activity>
-33        <activity android:name="com.example.employeelist.ui.TransactionActivity" >
+33        <activity android:name="com.example.employeelist.ui.MainActivity" >
 33-->C:\Users\babur\AndroidStudioProjects\boutique\app\src\main\AndroidManifest.xml:24:9-31:20
-33-->C:\Users\babur\AndroidStudioProjects\boutique\app\src\main\AndroidManifest.xml:24:19-57
+33-->C:\Users\babur\AndroidStudioProjects\boutique\app\src\main\AndroidManifest.xml:24:19-50
 34            <intent-filter>
 34-->C:\Users\babur\AndroidStudioProjects\boutique\app\src\main\AndroidManifest.xml:17:13-22:29
 35                <action android:name="android.intent.action.MAIN" />
@@ -71,6 +71,40 @@
 38-->C:\Users\babur\AndroidStudioProjects\boutique\app\src\main\AndroidManifest.xml:21:27-74
 39            </intent-filter>
 40        </activity>
-41    </application>
-42
-43</manifest>
+41        <activity android:name="com.example.employeelist.ui.TransactionActivity" >
+41-->C:\Users\babur\AndroidStudioProjects\boutique\app\src\main\AndroidManifest.xml:32:9-39:20
+41-->C:\Users\babur\AndroidStudioProjects\boutique\app\src\main\AndroidManifest.xml:32:19-57
+42            <intent-filter>
+42-->C:\Users\babur\AndroidStudioProjects\boutique\app\src\main\AndroidManifest.xml:17:13-22:29
+43                <action android:name="android.intent.action.MAIN" />
+43-->C:\Users\babur\AndroidStudioProjects\boutique\app\src\main\AndroidManifest.xml:18:17-69
+43-->C:\Users\babur\AndroidStudioProjects\boutique\app\src\main\AndroidManifest.xml:18:25-66
+44                <action android:name="android.intent.action.VIEW" />
+44-->C:\Users\babur\AndroidStudioProjects\boutique\app\src\main\AndroidManifest.xml:19:17-69
+44-->C:\Users\babur\AndroidStudioProjects\boutique\app\src\main\AndroidManifest.xml:19:25-66
+45
+46                <category android:name="android.intent.category.LAUNCHER" />
+46-->C:\Users\babur\AndroidStudioProjects\boutique\app\src\main\AndroidManifest.xml:21:17-77
+46-->C:\Users\babur\AndroidStudioProjects\boutique\app\src\main\AndroidManifest.xml:21:27-74
+47            </intent-filter>
+48        </activity>
+49        <activity android:name="com.example.employeelist.ui.CustomerActivity" >
+49-->C:\Users\babur\AndroidStudioProjects\boutique\app\src\main\AndroidManifest.xml:40:9-47:20
+49-->C:\Users\babur\AndroidStudioProjects\boutique\app\src\main\AndroidManifest.xml:40:19-54
+50            <intent-filter>
+50-->C:\Users\babur\AndroidStudioProjects\boutique\app\src\main\AndroidManifest.xml:17:13-22:29
+51                <action android:name="android.intent.action.MAIN" />
+51-->C:\Users\babur\AndroidStudioProjects\boutique\app\src\main\AndroidManifest.xml:18:17-69
+51-->C:\Users\babur\AndroidStudioProjects\boutique\app\src\main\AndroidManifest.xml:18:25-66
+52                <action android:name="android.intent.action.VIEW" />
+52-->C:\Users\babur\AndroidStudioProjects\boutique\app\src\main\AndroidManifest.xml:19:17-69
+52-->C:\Users\babur\AndroidStudioProjects\boutique\app\src\main\AndroidManifest.xml:19:25-66
+53
+54                <category android:name="android.intent.category.LAUNCHER" />
+54-->C:\Users\babur\AndroidStudioProjects\boutique\app\src\main\AndroidManifest.xml:21:17-77
+54-->C:\Users\babur\AndroidStudioProjects\boutique\app\src\main\AndroidManifest.xml:21:27-74
+55            </intent-filter>
+56        </activity>
+57    </application>
+58
+59</manifest>

@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import com.example.employeelist.model.CustomerModel;
 import com.example.employeelist.model.TransactionModel;
 
 import java.text.SimpleDateFormat;
@@ -108,14 +109,29 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+    public List<CustomerModel> getCustomerList(String sortBy) {
+        if (sortBy == null) sortBy = CUSTOMERNAME;
+        SQLiteDatabase db=this.getReadableDatabase();
+        List<CustomerModel> list = new ArrayList<>();
+        Cursor cursor = db.query(true,TABLE_NAME, new String[]{"trim(upper(customer_name)) customer_name,phone"}, null, null, null, null, sortBy, null);
+        if (cursor.moveToFirst()) {
+            do {
+                CustomerModel t = new CustomerModel();
+                t.setCustomerName(cursor.getString(cursor.getColumnIndex(CUSTOMERNAME)));
+                t.setPhone(cursor.getString(cursor.getColumnIndex(PHONE)));
+                list.add(t);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        closeDB(db);
+        return list;
+    }
     public List<TransactionModel> getTransactionList(String sortBy) {
         if (sortBy == null) sortBy = "id desc";
         SQLiteDatabase db=this.getReadableDatabase();
         List<TransactionModel> list = new ArrayList<>();
         Cursor cursor = db.query(TABLE_NAME, null, null, null, null, null, sortBy, null);
-//        Log.d("DB","LOOKING FOR DATA");
         if (cursor.moveToFirst()) {
-//            Log.d("DB","FOUND DATA");
             do {
                 TransactionModel t = new TransactionModel();
                 t.setId(cursor.getInt(cursor.getColumnIndex(ID)));

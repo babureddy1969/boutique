@@ -108,7 +108,7 @@ public class TransactionActivity extends AppCompatActivity {
         t.setId(Integer.parseInt(editId.getText().toString()));
         t.setTotal(Integer.parseInt(editTotal.getText().toString()));
         t.setPhone(editPhone.getText().toString());
-        t.setCustomerName(editName.getText().toString());
+        t.setCustomerName(editName.getText().toString().toUpperCase());
         t.setSaree(Integer.parseInt(editSaree.getText().toString()));
         t.setFall(Integer.parseInt(editFall.getText().toString()));
         t.setKutchu(Integer.parseInt(editKutchu.getText().toString()));

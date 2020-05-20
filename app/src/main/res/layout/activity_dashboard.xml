@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGrey1"
+    tools:context=".ui.MainActivity">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.MainActivity">
+
+
+        <RelativeLayout
+            android:id="@+id/rlTop"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:background="@color/colorWhite">
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="70dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/buttonCustomer"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:text="Customer" />
+
+            <Button
+                android:id="@+id/buttonSale"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:text="Sale" />
+
+            <Button
+                android:id="@+id/buttonSales"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:text="Show Sales" />
+
+            <Button
+                android:id="@+id/buttonReports"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:text="Reports" />
+        </LinearLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</RelativeLayout>

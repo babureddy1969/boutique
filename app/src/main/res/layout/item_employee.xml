@@ -74,7 +74,7 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/txtAgeTit"
+                android:id="@+id/txtPhone"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_centerVertical="true"
@@ -82,7 +82,6 @@
                 android:gravity="start|center"
                 android:maxLength="5"
                 android:maxLines="1"
-                android:text="@string/Balance"
                 android:textColor="@color/colorGrey"
                 android:textSize="14sp" />
 
@@ -91,11 +90,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_centerVertical="true"
-                android:layout_toRightOf="@+id/txtAgeTit"
-                android:gravity="start|center"
+                android:layout_toRightOf="@id/txtPhone"
+                android:gravity="center"
                 android:maxLines="1"
                 android:paddingLeft="5dp"
-                android:text="100"
                 android:textColor="@color/colorBlack"
                 android:textSize="17sp" />
 
