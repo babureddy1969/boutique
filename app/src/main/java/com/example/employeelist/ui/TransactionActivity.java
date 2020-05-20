@@ -42,11 +42,14 @@ public class TransactionActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                saveData();
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-                startActivity(new Intent(view.getContext(),MainActivity.class));
-
+                String message = validate();
+                if (message == "" ){
+                    saveData();
+                    startActivity(new Intent(view.getContext(),MainActivity.class));
+                }else {
+                    Snackbar.make(view, message, Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                }
 //                clear();
             }
         });
@@ -114,6 +117,22 @@ public class TransactionActivity extends AppCompatActivity {
         editDiscount.setText("0");
 
     }
+    private String validate(){
+        EditText editTotal = findViewById(R.id.editTotal);
+        EditText editName = findViewById(R.id.editName);
+        EditText editPhone = findViewById(R.id.editPhone);
+        if (TextUtils.isEmpty(editName.getText().toString().trim())){
+            return "Enter Name";
+        }
+        if (editPhone.getText().toString().trim().length()<10){
+            return "Enter 10 digit phone";
+        }
+        if (Integer.parseInt(editTotal.getText().toString().trim())<=0){
+            return "Enter price";
+        }
+        return "";
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
