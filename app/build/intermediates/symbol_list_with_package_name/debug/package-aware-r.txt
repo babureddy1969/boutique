@@ -1515,6 +1515,7 @@ id editBalance
 id editBlouse
 id editDiscount
 id editFall
+id editId
 id editKutchu
 id editName
 id editOther

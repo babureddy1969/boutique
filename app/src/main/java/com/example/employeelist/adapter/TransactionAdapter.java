@@ -14,6 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.employeelist.R;
 import com.example.employeelist.model.TransactionModel;
+import com.example.employeelist.ui.MainActivity;
+import com.example.employeelist.ui.TransactionActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,8 +60,24 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
         holder.mTxtName.setText(t.getCustomerName());
         holder.mTxtId.setText(String.valueOf(t.getId()));
         holder.mTxtSalary.setText(t.getCreatedDate());
-        Log.d("CREATED DATE",t.toString());
+//        Log.d("CREATED DATE",t.toString());
         holder.mTxtAge.setText(String.valueOf(t.getBalance()));
+        holder.mItem.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(v.getContext(), TransactionActivity.class);
+            intent.putExtra("id", t.getId());
+            context.startActivity(intent);
+//            Intent shareIntent = new Intent();
+//            shareIntent.setAction(Intent.ACTION_SEND);
+//            shareIntent.putExtra(Intent.EXTRA_TEXT, "Id: " + t.getId() +
+//                    " Name: " + t.getCustomerName() +
+//                    " Balance: " + t.getBalance() +
+//                    " Date: " + t.getCreatedDate());
+//            shareIntent.setType("text/plain");
+//            context.startActivity(Intent.createChooser(shareIntent, "Share Employee Details"));
+        }
+    });
     }
 
     @Override

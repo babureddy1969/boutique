@@ -38,6 +38,13 @@ public class TransactionActivity extends AppCompatActivity {
 //        Toolbar toolbar = findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
         clear();
+        Bundle b = getIntent().getExtras();
+        if (b!=null && b.containsKey("id")) {
+            int value = b.getInt("id");
+            Log.d("ID", value + "");
+            TransactionModel t = dbHelper.getTransaction(value);
+            setData(t);
+        }
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,8 +62,37 @@ public class TransactionActivity extends AppCompatActivity {
         });
 
     }
+    private void setData(TransactionModel t){
+        EditText editId = findViewById(R.id.editId);
+        EditText editTotal = findViewById(R.id.editTotal);
+        EditText editName = findViewById(R.id.editName);
+        EditText editPhone = findViewById(R.id.editPhone);
+        EditText editSaree = findViewById(R.id.editSaree);
+        EditText editFall = findViewById(R.id.editFall);
+        EditText editKutchu = findViewById(R.id.editKutchu);
+        EditText editBlouse = findViewById(R.id.editBlouse);
+        EditText editAdvance = findViewById(R.id.editAdvance);
+        EditText editDiscount = findViewById(R.id.editDiscount);
+        EditText editBalance = findViewById(R.id.editBalance);
+        EditText editPaid = findViewById(R.id.editPaid);
+        EditText editOther = findViewById(R.id.editOther);
+        editId.setText(String.valueOf(t.getId()));
+        editName.setText(t.getCustomerName());
+        editPhone.setText(t.getPhone());
+        editTotal.setText(String.valueOf(t.getTotal()));
+        editSaree.setText(String.valueOf(t.getSaree()));
+        editFall.setText(String.valueOf(t.getFall()));
+        editKutchu.setText(String.valueOf(t.getKutchu()));
+        editBlouse.setText(String.valueOf(t.getBlouse()));
+        editOther.setText(String.valueOf(t.getOther()));
+        editAdvance.setText(String.valueOf(t.getAdvance()));
+        editPaid.setText(String.valueOf(t.getPaid()));
+        editBalance.setText(String.valueOf(t.getBalance()));
+        editDiscount.setText(String.valueOf(t.getDiscount()));
+    }
     private void saveData(){
         TransactionModel t = new TransactionModel();
+        EditText editId = findViewById(R.id.editId);
         EditText editTotal = findViewById(R.id.editTotal);
         EditText editName = findViewById(R.id.editName);
         EditText editPhone = findViewById(R.id.editPhone);
@@ -69,6 +105,7 @@ public class TransactionActivity extends AppCompatActivity {
         EditText editBalance = findViewById(R.id.editBalance);
         EditText editPaid = findViewById(R.id.editPaid);
 
+        t.setId(Integer.parseInt(editId.getText().toString()));
         t.setTotal(Integer.parseInt(editTotal.getText().toString()));
         t.setPhone(editPhone.getText().toString());
         t.setCustomerName(editName.getText().toString());
@@ -91,6 +128,7 @@ public class TransactionActivity extends AppCompatActivity {
         return dateFormat.format(date);
     }
     private void clear(){
+        EditText editId = findViewById(R.id.editId);
         EditText editTotal = findViewById(R.id.editTotal);
         EditText editName = findViewById(R.id.editName);
         EditText editPhone = findViewById(R.id.editPhone);
@@ -103,6 +141,7 @@ public class TransactionActivity extends AppCompatActivity {
         EditText editBalance = findViewById(R.id.editBalance);
         EditText editPaid = findViewById(R.id.editPaid);
         EditText editOther = findViewById(R.id.editOther);
+        editId.setText("0");
         editName.setText("");
         editPhone.setText("");
         editTotal.setText("0");
@@ -192,10 +231,10 @@ public class TransactionActivity extends AppCompatActivity {
         }
         if (!TextUtils.isEmpty (editDiscount.getText().toString())){
             discount = Integer.parseInt(editDiscount.getText().toString());
-            editBalance.setText(String.valueOf(total-advance-discount));
+            editBalance.setText(String.valueOf(total-advance-discount-paid));
         }
         if (!TextUtils.isEmpty (editPaid.getText().toString())){
-            discount = Integer.parseInt(editPaid.getText().toString());
+            paid = Integer.parseInt(editPaid.getText().toString());
             editBalance.setText(String.valueOf(total-advance-discount-paid));
         }
     }

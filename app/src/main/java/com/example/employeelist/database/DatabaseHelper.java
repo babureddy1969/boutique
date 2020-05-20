@@ -93,12 +93,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(AMOUNT_PAID, t.getPaid());
         contentValues.put(BALANCE, t.getBalance());
         contentValues.put(CREATED_DATE, t.getCreatedDate());
-        long ins = db.insert(TABLE_NAME, null, contentValues);
-//        Log.d("DB","INSERT " + ins + " " + t.toString());
-//        contentValues = new ContentValues();
-//        contentValues.put(CREATED_DATE, t.getCreatedDate());
-//        String[] args = {ins+""};
-//        db.update(TABLE_NAME,contentValues,null,null);
+        if (t.getId()>0) {
+            String[] args = new String[]{t.getId()+""};
+            db.update(TABLE_NAME, contentValues, "id=? ", args);
+        }else {
+            long ins = db.insert(TABLE_NAME, null, contentValues);
+        }
     }
     private SQLiteDatabase openDB() {
         return this.getWritableDatabase();
@@ -138,5 +138,29 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cursor.close();
         closeDB(db);
         return list;
+    }
+    public TransactionModel getTransaction(int id) {
+        TransactionModel t = new TransactionModel();
+        SQLiteDatabase db=this.getReadableDatabase();
+        Cursor cursor = db.query(TABLE_NAME, null, "id=?", new String[]{id+""}, null, null, null, null);
+        if (cursor.moveToFirst()) {
+            t.setId(id);
+            t.setCustomerName(cursor.getString(cursor.getColumnIndex(CUSTOMERNAME)));
+            t.setPhone(cursor.getString(cursor.getColumnIndex(PHONE)));
+            t.setSaree(cursor.getInt(cursor.getColumnIndex(SAREE_PRICE)));
+            t.setFall(cursor.getInt(cursor.getColumnIndex(FALL_PRICE)));
+            t.setKutchu(cursor.getInt(cursor.getColumnIndex(KUTCHU_PRICE)));
+            t.setBlouse(cursor.getInt(cursor.getColumnIndex(BLOUSE_PRICE)));
+            t.setOther(cursor.getInt(cursor.getColumnIndex(OTHER_PRICE)));
+            t.setPaid(cursor.getInt(cursor.getColumnIndex(AMOUNT_PAID)));
+            t.setDiscount(cursor.getInt(cursor.getColumnIndex(DISCOUNT)));
+            t.setAdvance(cursor.getInt(cursor.getColumnIndex(ADVANCE_PAID)));
+            t.setBalance(cursor.getInt(cursor.getColumnIndex(BALANCE)));
+            t.setTotal(cursor.getInt(cursor.getColumnIndex(TOTAL_PRICE)));
+            t.setCreatedDate(cursor.getString(cursor.getColumnIndex(CREATED_DATE)));
+        }
+        cursor.close();
+        closeDB(db);
+        return t;
     }
 }
