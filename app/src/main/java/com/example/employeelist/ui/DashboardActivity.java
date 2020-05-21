@@ -37,6 +37,13 @@ public class DashboardActivity extends AppCompatActivity {
                 startActivity(new Intent(v.getContext(), CustomerActivity.class));
             }
         });
+        Button buttonReport = findViewById(R.id.buttonReports);
+        buttonReport.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(v.getContext(), ReportActivity.class));
+            }
+        });
     }
     @Override
     protected void onResume() {

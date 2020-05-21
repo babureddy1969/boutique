@@ -1720,11 +1720,13 @@ id txtClear
 id txtEmpty
 id txtId
 id txtIdTit
+id txtMonth
 id txtName
 id txtPhone
 id txtPhoneTit
 id txtSalary
 id txtSalaryTit
+id txtTotal
 id unchecked
 id uniform
 id unlabeled
@@ -1798,8 +1800,8 @@ layout abc_tooltip
 layout activity_customer
 layout activity_dashboard
 layout activity_main
+layout activity_report
 layout activity_transaction
-layout activity_transaction1
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog

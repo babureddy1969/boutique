@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import com.example.employeelist.model.CustomerModel;
+import com.example.employeelist.model.ReportModel;
 import com.example.employeelist.model.TransactionModel;
 
 import java.text.SimpleDateFormat;
@@ -178,5 +179,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cursor.close();
         closeDB(db);
         return t;
+    }
+    public List<ReportModel> getReports(int month) {
+        if (month == 0) month = 1;
+        List<ReportModel> list = new ArrayList<>();
+        SQLiteDatabase db=this.getReadableDatabase();
+        Cursor cursor = db.query(TABLE_NAME, new String[]{"sum(total_price) total","substr(created_date,0,8) month"}, null,null, "month", null, "month desc", "10");
+        if (cursor.moveToFirst()) {
+            ReportModel t = new ReportModel();
+            t.setMonth(cursor.getString(cursor.getColumnIndex("month")));
+            t.setTotal(cursor.getInt(cursor.getColumnIndex("total")));
+            list.add(t);
+        }
+        cursor.close();
+        closeDB(db);
+        return list;
     }
 }
