@@ -12,13 +12,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.employeelist.R;
 import com.example.employeelist.model.CustomerModel;
-import com.example.employeelist.model.TransactionModel;
-import com.example.employeelist.ui.CustomerActivity;
-import com.example.employeelist.ui.TransactionActivity;
+import com.example.employeelist.ui.MainActivity;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -56,14 +53,14 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.ItemHo
         final CustomerModel t = list.get(position);
         holder.mTxtPhone.setText(t.getPhone());
         holder.mTxtName.setText(t.getCustomerName());
-//        holder.mItem.setOnClickListener(new View.OnClickListener() {
-//        @Override
-//        public void onClick(View v) {
-//            Intent intent = new Intent(v.getContext(), CustomerActivity.class);
-//            intent.putExtra("id", t.getId());
-//            context.startActivity(intent);
-//        }
-//    });
+        holder.mItem.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(v.getContext(), MainActivity.class);
+            intent.putExtra("phone", t.getPhone());
+            context.startActivity(intent);
+        }
+    });
     }
 
     @Override

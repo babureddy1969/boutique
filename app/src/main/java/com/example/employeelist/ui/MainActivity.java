@@ -7,6 +7,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -29,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView txtEmpty;
     private SwipeRefreshLayout swipeRefreshLayout;
     private int sortBy = 0;
+    private boolean phone = true;
+    private String phoneValue = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +53,20 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(v.getContext(),TransactionActivity.class));
             }
         });
+        Bundle b = getIntent().getExtras();
+
+        List<TransactionModel> t  =null;
+        if (b!=null && b.containsKey("phone")) {
+            phone = true;
+            phoneValue = b.getString("phone");
+            Log.d("PHONE", phoneValue + "");
+            t  = databaseHelper.getTransactionListByPhone(phoneValue,null);
+            adapter.addList(t);
+        }else{
+            phone = false;
+            t  = databaseHelper.getTransactionList(null);
+        }
+
         //Sort Database
         ImageView imgSort = findViewById(R.id.imgSort);
         imgSort.setOnClickListener(new View.OnClickListener() {
@@ -63,8 +80,13 @@ public class MainActivity extends AppCompatActivity {
                 }else{
                     sortBy = 1;
                 }
-                List<TransactionModel> sortList = databaseHelper.getTransactionList(orderBy);
-                adapter.addList(sortList);
+
+                List<TransactionModel> t  = null;
+                if (phone == true)
+                    t  = databaseHelper.getTransactionListByPhone(phoneValue,orderBy);
+                else
+                    t  = databaseHelper.getTransactionList(orderBy);
+                adapter.addList(t);
             }
         });
         //RecyclerView
@@ -112,6 +134,9 @@ public class MainActivity extends AppCompatActivity {
      * Otherwise load data from server.
      * */
     private void populateList() {
+        if (phone)
+        adapter.addList(databaseHelper.getTransactionListByPhone(phoneValue,null));
+        else
         adapter.addList(databaseHelper.getTransactionList(null));
     }
 }

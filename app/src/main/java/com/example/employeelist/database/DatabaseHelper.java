@@ -156,6 +156,35 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         closeDB(db);
         return list;
     }
+    public List<TransactionModel> getTransactionListByPhone(String phone, String orderBy) {
+        if (orderBy == null) orderBy = "id desc";
+        SQLiteDatabase db=this.getReadableDatabase();
+        List<TransactionModel> list = new ArrayList<>();
+        Cursor cursor = db.query(TABLE_NAME, null, "phone=?", new String[]{phone}, null, null, orderBy, null);
+        if (cursor.moveToFirst()) {
+            do {
+                TransactionModel t = new TransactionModel();
+                t.setId(cursor.getInt(cursor.getColumnIndex(ID)));
+                t.setCustomerName(cursor.getString(cursor.getColumnIndex(CUSTOMERNAME)));
+                t.setPhone(cursor.getString(cursor.getColumnIndex(PHONE)));
+                t.setSaree(cursor.getInt(cursor.getColumnIndex(SAREE_PRICE)));
+                t.setFall(cursor.getInt(cursor.getColumnIndex(FALL_PRICE)));
+                t.setKutchu(cursor.getInt(cursor.getColumnIndex(KUTCHU_PRICE)));
+                t.setBlouse(cursor.getInt(cursor.getColumnIndex(BLOUSE_PRICE)));
+                t.setOther(cursor.getInt(cursor.getColumnIndex(OTHER_PRICE)));
+                t.setPaid(cursor.getInt(cursor.getColumnIndex(AMOUNT_PAID)));
+                t.setDiscount(cursor.getInt(cursor.getColumnIndex(DISCOUNT)));
+                t.setAdvance(cursor.getInt(cursor.getColumnIndex(ADVANCE_PAID)));
+                t.setBalance(cursor.getInt(cursor.getColumnIndex(BALANCE)));
+                t.setTotal(cursor.getInt(cursor.getColumnIndex(TOTAL_PRICE)));
+                t.setCreatedDate(cursor.getString(cursor.getColumnIndex(CREATED_DATE)));
+                list.add(t);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        closeDB(db);
+        return list;
+    }
     public TransactionModel getTransaction(int id) {
         TransactionModel t = new TransactionModel();
         SQLiteDatabase db=this.getReadableDatabase();
