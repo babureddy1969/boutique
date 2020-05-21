@@ -64,18 +64,18 @@ public class TransactionActivity extends AppCompatActivity {
     }
     private void setData(TransactionModel t){
         EditText editId = findViewById(R.id.editId);
-        EditText editTotal = findViewById(R.id.editTotal);
         EditText editName = findViewById(R.id.editName);
         EditText editPhone = findViewById(R.id.editPhone);
         EditText editSaree = findViewById(R.id.editSaree);
         EditText editFall = findViewById(R.id.editFall);
         EditText editKutchu = findViewById(R.id.editKutchu);
         EditText editBlouse = findViewById(R.id.editBlouse);
+        EditText editOther = findViewById(R.id.editOther);
+        EditText editTotal = findViewById(R.id.editTotal);
         EditText editAdvance = findViewById(R.id.editAdvance);
         EditText editDiscount = findViewById(R.id.editDiscount);
-        EditText editBalance = findViewById(R.id.editBalance);
         EditText editPaid = findViewById(R.id.editPaid);
-        EditText editOther = findViewById(R.id.editOther);
+        EditText editBalance = findViewById(R.id.editBalance);
         editId.setText(String.valueOf(t.getId()));
         editName.setText(t.getCustomerName());
         editPhone.setText(t.getPhone());
@@ -104,19 +104,48 @@ public class TransactionActivity extends AppCompatActivity {
         EditText editDiscount = findViewById(R.id.editDiscount);
         EditText editBalance = findViewById(R.id.editBalance);
         EditText editPaid = findViewById(R.id.editPaid);
+        EditText editOther = findViewById(R.id.editOther);
 
         t.setId(Integer.parseInt(editId.getText().toString()));
         t.setTotal(Integer.parseInt(editTotal.getText().toString()));
         t.setPhone(editPhone.getText().toString());
         t.setCustomerName(editName.getText().toString().toUpperCase());
-        t.setSaree(Integer.parseInt(editSaree.getText().toString()));
-        t.setFall(Integer.parseInt(editFall.getText().toString()));
-        t.setKutchu(Integer.parseInt(editKutchu.getText().toString()));
-        t.setBlouse(Integer.parseInt(editBlouse.getText().toString()));
-        t.setAdvance(Integer.parseInt(editAdvance.getText().toString()));
-        t.setDiscount(Integer.parseInt(editDiscount.getText().toString()));
-        t.setBalance(Integer.parseInt(editBalance.getText().toString()));
-        t.setPaid(Integer.parseInt(editPaid.getText().toString()));
+        int temp = 0;
+        if (!TextUtils.isEmpty(editSaree.getText().toString()))
+            temp = Integer.parseInt(editSaree.getText().toString());
+        t.setSaree(temp);
+        temp = 0;
+        if (!TextUtils.isEmpty(editFall.getText().toString()))
+            temp = Integer.parseInt(editFall.getText().toString());
+        t.setFall(temp);
+        temp = 0;
+        if (!TextUtils.isEmpty(editKutchu.getText().toString()))
+            temp = Integer.parseInt(editKutchu.getText().toString());
+        t.setKutchu(temp);
+        temp = 0;
+        if (!TextUtils.isEmpty(editBlouse.getText().toString()))
+            temp = Integer.parseInt(editBlouse.getText().toString());
+        t.setBlouse(temp);
+        temp = 0;
+        if (!TextUtils.isEmpty(editAdvance.getText().toString()))
+            temp = Integer.parseInt(editAdvance.getText().toString());
+        t.setAdvance(temp);
+        temp = 0;
+        if (!TextUtils.isEmpty(editDiscount.getText().toString()))
+            temp = Integer.parseInt(editDiscount.getText().toString());
+        t.setDiscount(temp);
+        temp = 0;
+        if (!TextUtils.isEmpty(editBalance.getText().toString()))
+            temp = Integer.parseInt(editBalance.getText().toString());
+        t.setBalance(temp);
+        temp = 0;
+        if (!TextUtils.isEmpty(editPaid.getText().toString()))
+            temp = Integer.parseInt(editPaid.getText().toString());
+        t.setPaid(temp);
+        temp = 0;
+        if (!TextUtils.isEmpty(editOther.getText().toString()))
+            temp = Integer.parseInt(editOther.getText().toString());
+        t.setOther(temp);
         t.setCreatedDate(getDateTime());
         dbHelper.insert(t);
 
