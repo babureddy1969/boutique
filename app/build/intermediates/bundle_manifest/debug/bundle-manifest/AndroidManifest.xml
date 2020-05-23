@@ -22,6 +22,7 @@
         android:testOnly="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true" >
+        <activity android:name="com.example.employeelist.ui.activity_sale" />
         <activity android:name="com.example.employeelist.ui.DashboardActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

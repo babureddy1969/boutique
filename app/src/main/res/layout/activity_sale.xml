@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity_sale">
+
+    <RelativeLayout
+        android:id="@+id/relativeID"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/topBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/topBarm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="#009688"
+                android:gravity="center"
+                android:inputType="none"
+                android:text="Bindus Boutique"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editIdTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="hint" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editNameTitle"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/topBar"
+            android:gravity="left">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/Name"
+                android:inputType="textPersonName" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editPhoneTitle"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/topBar"
+            android:layout_toRightOf="@id/editNameTitle"
+            android:gravity="right">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:gravity="right"
+                android:hint="@android:string/emptyPhoneNumber"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editSareeTitle"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editNameTitle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editSaree"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Saree Price"
+                android:inputType="number" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editFallTitle"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editPhoneTitle"
+            android:layout_toRightOf="@id/editSareeTitle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editFall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:width="200dp"
+                android:hint="Fall Price"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editKutchuTitle"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editSareeTitle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editKutchu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Kutchu Price"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editBlouseTitle"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editFallTitle"
+            android:layout_toRightOf="@id/editKutchuTitle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editBlouse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Blouse Price"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editOtherTitle"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editKutchuTitle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editOther"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Other Price"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editTotalTitle"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editBlouseTitle"
+            android:layout_toRightOf="@id/editOtherTitle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:editable="false"
+                android:hint="Total Price"
+                android:inputType="none"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editAdvanceTitle"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editOtherTitle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editAdvance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Advance Paid"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editDiscountTitle"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTotalTitle"
+            android:layout_toRightOf="@id/editAdvanceTitle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editDiscount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Discount"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editPaidTitle"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editAdvanceTitle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editPaid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Paid Amount"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editBalanceTitle"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editDiscountTitle"
+            android:layout_toRightOf="@id/editPaidTitle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editBalance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:editable="false"
+                android:hint="Balance"
+                android:inputType="none"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/editSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editBalanceTitle"
+            android:background="#E91E63"
+            android:text="SAVE"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp" />
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
