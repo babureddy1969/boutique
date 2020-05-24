@@ -5508,7 +5508,12 @@
     </style><style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-    </style><style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/><style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/></file></source><source path="C:\Users\babur\AndroidStudioProjects\boutique\app\build\generated\res\rs\debug"/><source path="C:\Users\babur\AndroidStudioProjects\boutique\app\build\generated\res\resValues\debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\babur\AndroidStudioProjects\boutique\app\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug" generated-set="debug$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\babur\AndroidStudioProjects\boutique\app\src\debug\res"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="AlertDialog">
+    </style><style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/><style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/></file><file path="C:\Users\babur\AndroidStudioProjects\boutique\app\src\main\res\values\attrs_payment.xml" qualifiers=""><declare-styleable name="Payment">
+        <attr format="string" name="exampleString"/>
+        <attr format="dimension" name="exampleDimension"/>
+        <attr format="color" name="exampleColor"/>
+        <attr format="color|reference" name="exampleDrawable"/>
+    </declare-styleable></file><file name="activity_payment" path="C:\Users\babur\AndroidStudioProjects\boutique\app\src\main\res\layout\activity_payment.xml" qualifiers="" type="layout"/></source><source path="C:\Users\babur\AndroidStudioProjects\boutique\app\build\generated\res\rs\debug"/><source path="C:\Users\babur\AndroidStudioProjects\boutique\app\build\generated\res\resValues\debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\babur\AndroidStudioProjects\boutique\app\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug" generated-set="debug$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\babur\AndroidStudioProjects\boutique\app\src\debug\res"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="AlertDialog">
         <attr name="android:layout"/>
         <attr format="reference" name="buttonPanelSideLayout"/>
         <attr format="reference" name="listLayout"/>
@@ -6736,7 +6741,12 @@
     <attr name="android:icon"/>
     
     <attr name="android:layout"/>
-  </declare-styleable><declare-styleable name="SwitchMaterial">
+  </declare-styleable><declare-styleable name="Payment">
+        <attr format="string" name="exampleString"/>
+        <attr format="dimension" name="exampleDimension"/>
+        <attr format="color" name="exampleColor"/>
+        <attr format="color|reference" name="exampleDrawable"/>
+    </declare-styleable><declare-styleable name="SwitchMaterial">
     
     <attr name="useMaterialThemeColors"/>
   </declare-styleable><declare-styleable name="ActionMode">

@@ -235,8 +235,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/editBalanceTitle"
+            android:layout_margin="1dp"
             android:background="#E91E63"
             android:text="SAVE"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/buttonPayment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editSave"
+            android:background="#E91E63"
+            android:text="PAYMENT"
             android:textColor="#FFFFFF"
             android:textSize="24sp" />
 

@@ -104,6 +104,10 @@
         "source": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\src\\main\\res\\drawable\\ic_sort.png"
     },
     {
+        "merged": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_payment.xml.flat",
+        "source": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\src\\main\\res\\layout\\activity_payment.xml"
+    },
+    {
         "merged": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_add.png.flat",
         "source": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\src\\main\\res\\drawable\\ic_add.png"
     },

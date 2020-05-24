@@ -1,27 +1,20 @@
 package com.example.employeelist.ui;
 
-import android.annotation.SuppressLint;
-import android.content.Context;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 
-import androidx.appcompat.widget.AppCompatTextView;
-import androidx.recyclerview.widget.LinearLayoutManager;
-
 import com.example.employeelist.R;
 import com.example.employeelist.database.DatabaseHelper;
+import com.example.employeelist.model.PaymentModel;
 import com.example.employeelist.model.TransactionModel;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
-import com.google.android.material.textfield.TextInputEditText;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -34,21 +27,24 @@ import java.util.Locale;
 
 public class TransactionActivity extends AppCompatActivity {
     private DatabaseHelper dbHelper ;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sale);
         dbHelper =  new DatabaseHelper(getApplicationContext());
-//        Toolbar toolbar = findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
         clear();
         Bundle b = getIntent().getExtras();
         if (b!=null && b.containsKey("id")) {
-            int value = b.getInt("id");
-            Log.d("ID", value + "");
+            final int value = b.getInt("id");
             TransactionModel t = dbHelper.getTransaction(value);
             setData(t);
+            Button buttonPayment = findViewById(R.id.buttonPayment);
+            buttonPayment.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    callLoginDialog(value);
+                }
+            });
         }
         Button fab = findViewById(R.id.editSave);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -66,6 +62,29 @@ public class TransactionActivity extends AppCompatActivity {
             }
         });
 
+    }
+    private void callLoginDialog(final int value)
+    {
+        final Dialog myDialog = new Dialog(this);
+        myDialog.setContentView(R.layout.activity_payment);
+        myDialog.setCancelable(true);
+        final EditText editPayment =  myDialog.findViewById(R.id.editPay);
+        Button buttonPayment =  myDialog.findViewById(R.id.buttonPay);
+        myDialog.show();
+        buttonPayment.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Log.d("PAYMENT" + value, editPayment.getText().toString());
+                PaymentModel paymentModel = new PaymentModel();
+                if (!TextUtils.isEmpty(editPayment.getText().toString().trim())){
+                    paymentModel.setTx_id(value);
+                    paymentModel.setAmount(Integer.parseInt(editPayment.getText().toString()));
+                    paymentModel.setCreatedDate(getDateTime());
+                    dbHelper.insertPayment(paymentModel);
+                }
+                myDialog.cancel();
+            }
+        });
     }
     private void setData(TransactionModel t){
         EditText editId = findViewById(R.id.editId);

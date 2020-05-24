@@ -312,6 +312,10 @@ attr errorIconTint
 attr errorIconTintMode
 attr errorTextAppearance
 attr errorTextColor
+attr exampleColor
+attr exampleDimension
+attr exampleDrawable
+attr exampleString
 attr expandActivityOverflowButtonDrawable
 attr expanded
 attr expandedTitleGravity
@@ -1475,6 +1479,8 @@ id blocking
 id bottom
 id buttonCustomer
 id buttonPanel
+id buttonPay
+id buttonPayment
 id buttonReports
 id buttonSale
 id buttonSales
@@ -1534,6 +1540,7 @@ id editOther
 id editOtherTitle
 id editPaid
 id editPaidTitle
+id editPay
 id editPhone
 id editPhoneTitle
 id editSaree
@@ -1566,6 +1573,7 @@ id groups
 id hideable
 id home
 id homeAsUp
+id ib_close
 id icon
 id icon_group
 id ifRoom
@@ -1648,6 +1656,7 @@ id right_side
 id rlId
 id rlSalary
 id rlTop
+id rl_custom_layout
 id rounded
 id save_non_transition_alpha
 id save_overlay_view
@@ -1817,6 +1826,7 @@ layout abc_tooltip
 layout activity_customer
 layout activity_dashboard
 layout activity_main
+layout activity_payment
 layout activity_report
 layout activity_sale
 layout custom_dialog
@@ -2726,6 +2736,7 @@ styleable MenuGroup android_enabled android_id android_visible android_menuCateg
 styleable MenuItem android_icon android_enabled android_id android_checked android_visible android_menuCategory android_orderInCategory android_title android_titleCondensed android_alphabeticShortcut android_numericShortcut android_checkable android_onClick actionLayout actionProviderClass actionViewClass alphabeticModifiers contentDescription iconTint iconTintMode numericModifiers showAsAction tooltipText
 styleable MenuView android_windowAnimationStyle android_itemTextAppearance android_horizontalDivider android_verticalDivider android_headerBackground android_itemBackground android_itemIconDisabledAlpha preserveIconSpacing subMenuArrow
 styleable NavigationView android_background android_fitsSystemWindows android_maxWidth elevation headerLayout itemBackground itemHorizontalPadding itemIconPadding itemIconSize itemIconTint itemMaxLines itemShapeAppearance itemShapeAppearanceOverlay itemShapeFillColor itemShapeInsetBottom itemShapeInsetEnd itemShapeInsetStart itemShapeInsetTop itemTextAppearance itemTextColor menu
+styleable Payment exampleColor exampleDimension exampleDrawable exampleString
 styleable PopupWindow android_popupBackground android_popupAnimationStyle overlapAnchor
 styleable PopupWindowBackgroundState state_above_anchor
 styleable RecycleListView paddingBottomNoButtons paddingTopNoTitle
