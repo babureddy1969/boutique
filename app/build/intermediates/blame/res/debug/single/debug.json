@@ -72,6 +72,10 @@
         "source": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
+        "merged": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_payments.xml.flat",
+        "source": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\src\\main\\res\\layout\\activity_payments.xml"
+    },
+    {
         "merged": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
     },

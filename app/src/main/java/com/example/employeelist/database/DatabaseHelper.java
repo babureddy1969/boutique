@@ -90,7 +90,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues contentValues = new ContentValues();
         contentValues.put(TX_ID, t.getTx_id());
         contentValues.put(AMOUNT_PAID, t.getAmount());
-        contentValues.put(CREATED_DATE, t.getCreatedDate());
+        contentValues.put(CREATED_DATE, t.getCreated_date());
         long ins = db.insert(PAYMENT_TABLE, null, contentValues);
     }
 
@@ -169,6 +169,26 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 t.setBalance(t.getTotal()-t.getAdvance()-t.getDiscount()-t.getPaid());
                 t.setCreatedDate(cursor.getString(cursor.getColumnIndex(CREATED_DATE)));
                 list.add(t);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        closeDB(db);
+        return list;
+    }
+    public List<PaymentModel> getPaymentList(int id) {
+        SQLiteDatabase db=this.getReadableDatabase();
+        List<PaymentModel> list = new ArrayList<>();
+        Log.d("PAYMENT TX ID",id+"");
+        Cursor cursor = db.query(PAYMENT_TABLE, null, "tx_id="+id, null, null, null, "id desc", null);
+        if (cursor.moveToFirst()) {
+            do {
+                PaymentModel t = new PaymentModel();
+                t.setId(cursor.getInt(cursor.getColumnIndex(ID)));
+                t.setCreated_date(cursor.getString(cursor.getColumnIndex(CREATED_DATE)));
+                t.setTx_id(Integer.parseInt(cursor.getString(cursor.getColumnIndex(TX_ID))));
+                t.setAmount(Integer.parseInt(cursor.getString(cursor.getColumnIndex(AMOUNT_PAID))));
+                list.add(t);
+                Log.d("Payments",t.toString());
             } while (cursor.moveToNext());
         }
         cursor.close();

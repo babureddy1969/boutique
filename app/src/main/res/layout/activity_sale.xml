@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activity_sale">
+    tools:context=".ui.TransactionActivity">
 
     <RelativeLayout
         android:id="@+id/relativeID"
@@ -17,6 +17,12 @@
             android:layout_height="wrap_content"
             android:visibility="gone">
 
+            <ImageButton
+                android:id="@+id/buttonHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="?attr/homeAsUpIndicator" />
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/topBarm"
                 android:layout_width="match_parent"
@@ -25,7 +31,6 @@
                 android:background="#009688"
                 android:gravity="center"
                 android:inputType="none"
-                android:text="Bindus Boutique"
                 android:textColor="#FFFFFF"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -208,6 +213,7 @@
                 android:id="@+id/editPaid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:editable="false"
                 android:hint="Paid Amount"
                 android:inputType="number" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -250,6 +256,253 @@
             android:text="PAYMENT"
             android:textColor="#FFFFFF"
             android:textSize="24sp" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardPayment0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/buttonPayment"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/textCreatedDate0"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textAmount0"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:gravity="left"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardPayment1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cardPayment0"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/textCreatedDate1"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textAmount1"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:gravity="left"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardPayment2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cardPayment1"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/textCreatedDate2"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textAmount2"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:gravity="left"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardPayment3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cardPayment2"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/textCreatedDate3"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textAmount3"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:gravity="left"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardPayment4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cardPayment3"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/textCreatedDate4"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textAmount4"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:gravity="left"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardPayment5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cardPayment4"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/textCreatedDate5"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textAmount5"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:gravity="left"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardPayment6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cardPayment5"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/textCreatedDate6"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textAmount6"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:gravity="left"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardPayment7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cardPayment6"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/textCreatedDate7"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textAmount7"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:gravity="left"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardPayment8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cardPayment7"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/textCreatedDate8"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textAmount8"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:gravity="right|left"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardPayment9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cardPayment8"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/textCreatedDate9"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textAmount9"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:gravity="left"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+        <TextView
+            android:id="@+id/txtEmpty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/no_data"
+            android:textColor="@color/colorRed"
+            android:textSize="20sp"
+            android:visibility="gone" />
 
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

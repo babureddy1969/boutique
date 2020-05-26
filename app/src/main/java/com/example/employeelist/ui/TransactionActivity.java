@@ -1,32 +1,48 @@
 package com.example.employeelist.ui;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import com.example.employeelist.R;
+import com.example.employeelist.adapter.PayAdapter;
+import com.example.employeelist.adapter.PaymentAdapter;
 import com.example.employeelist.database.DatabaseHelper;
 import com.example.employeelist.model.PaymentModel;
 import com.example.employeelist.model.TransactionModel;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.text.TextUtils;
 import android.util.Log;
+import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.LinearLayout.LayoutParams;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 public class TransactionActivity extends AppCompatActivity {
     private DatabaseHelper dbHelper ;
+    private TextView txtEmpty;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,13 +54,74 @@ public class TransactionActivity extends AppCompatActivity {
             final int value = b.getInt("id");
             TransactionModel t = dbHelper.getTransaction(value);
             setData(t);
-            Button buttonPayment = findViewById(R.id.buttonPayment);
-            buttonPayment.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    callLoginDialog(value);
+            List<PaymentModel> payments = dbHelper.getPaymentList(value);
+            if (t.getBalance()>0) {
+                Button buttonPayment = findViewById(R.id.buttonPayment);
+                buttonPayment.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        callLoginDialog(value);
+                    }
+                });
+            }
+            txtEmpty = findViewById(R.id.txtEmpty);
+            RecyclerView recyclerView = findViewById(R.id.recyclerView);
+            recyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
+
+//            Log.d("PAYMENT COUNT",payments.size()+"");
+            for(int i=0;i<payments.size();i++){
+                if (i == 0) {
+                    TextView textAmount = findViewById(R.id.textAmount0);
+                    TextView textCreatedDate = findViewById(R.id.textCreatedDate0);
+                    textAmount.setText(payments.get(i).getAmount() + "");
+                    textCreatedDate.setText(payments.get(i).getCreated_date());
+                } else if (i == 1) {
+                    TextView textAmount = findViewById(R.id.textAmount1);
+                    TextView textCreatedDate = findViewById(R.id.textCreatedDate1);
+                    textAmount.setText(payments.get(i).getAmount() + "");
+                    textCreatedDate.setText(payments.get(i).getCreated_date());
+                } else if (i == 2) {
+                    TextView textAmount = findViewById(R.id.textAmount2);
+                    TextView textCreatedDate = findViewById(R.id.textCreatedDate2);
+                    textAmount.setText(payments.get(i).getAmount() + "");
+                    textCreatedDate.setText(payments.get(i).getCreated_date());
+                } else if (i == 3) {
+                    TextView textAmount = findViewById(R.id.textAmount3);
+                    TextView textCreatedDate = findViewById(R.id.textCreatedDate3);
+                    textAmount.setText(payments.get(i).getAmount() + "");
+                    textCreatedDate.setText(payments.get(i).getCreated_date());
+                } else if (i == 4) {
+                    TextView textAmount = findViewById(R.id.textAmount4);
+                    TextView textCreatedDate = findViewById(R.id.textCreatedDate4);
+                    textAmount.setText(payments.get(i).getAmount() + "");
+                    textCreatedDate.setText(payments.get(i).getCreated_date());
+                } else if (i == 5) {
+                    TextView textAmount = findViewById(R.id.textAmount5);
+                    TextView textCreatedDate = findViewById(R.id.textCreatedDate5);
+                    textAmount.setText(payments.get(i).getAmount() + "");
+                    textCreatedDate.setText(payments.get(i).getCreated_date());
+                } else if (i == 6) {
+                    TextView textAmount = findViewById(R.id.textAmount6);
+                    TextView textCreatedDate = findViewById(R.id.textCreatedDate6);
+                    textAmount.setText(payments.get(i).getAmount() + "");
+                    textCreatedDate.setText(payments.get(i).getCreated_date());
+                } else if (i == 7) {
+                    TextView textAmount = findViewById(R.id.textAmount7);
+                    TextView textCreatedDate = findViewById(R.id.textCreatedDate7);
+                    textAmount.setText(payments.get(i).getAmount() + "");
+                    textCreatedDate.setText(payments.get(i).getCreated_date());
+                } else if (i == 8) {
+                    TextView textAmount = findViewById(R.id.textAmount8);
+                    TextView textCreatedDate = findViewById(R.id.textCreatedDate8);
+                    textAmount.setText(payments.get(i).getAmount() + "");
+                    textCreatedDate.setText(payments.get(i).getCreated_date());
+                } else if (i == 9) {
+                    TextView textAmount = findViewById(R.id.textAmount9);
+                    TextView textCreatedDate = findViewById(R.id.textCreatedDate9);
+                    textAmount.setText(payments.get(i).getAmount() + "");
+                    textCreatedDate.setText(payments.get(i).getCreated_date());
                 }
-            });
+            }
         }
         Button fab = findViewById(R.id.editSave);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -61,6 +138,53 @@ public class TransactionActivity extends AppCompatActivity {
 //                clear();
             }
         });
+
+        ImageButton home = findViewById(R.id.buttonHome);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                    startActivity(new Intent(view.getContext(),DashboardActivity.class));
+            }
+        });
+    }
+    public void getCard(RecyclerView recyclerView,Context context){
+
+        CardView cardview = new CardView(context);
+
+        LayoutParams layoutparams = new LayoutParams(
+                LayoutParams.WRAP_CONTENT,
+                LayoutParams.WRAP_CONTENT
+        );
+
+        cardview.setLayoutParams(layoutparams);
+
+        cardview.setRadius(15);
+
+        cardview.setPadding(25, 25, 25, 25);
+
+        cardview.setCardBackgroundColor(Color.MAGENTA);
+
+        cardview.setMaxCardElevation(30);
+
+        cardview.setMaxCardElevation(6);
+
+        TextView textview = new TextView(context);
+
+        textview.setLayoutParams(layoutparams);
+
+        textview.setText("CardView Programmatically");
+
+        textview.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 25);
+
+        textview.setTextColor(Color.WHITE);
+
+        textview.setPadding(25,25,25,25);
+
+        textview.setGravity(Gravity.CENTER);
+
+        cardview.addView(textview);
+
+        recyclerView.addView(cardview);
 
     }
     private void callLoginDialog(final int value)
@@ -79,13 +203,17 @@ public class TransactionActivity extends AppCompatActivity {
                 if (!TextUtils.isEmpty(editPayment.getText().toString().trim())){
                     paymentModel.setTx_id(value);
                     paymentModel.setAmount(Integer.parseInt(editPayment.getText().toString()));
-                    paymentModel.setCreatedDate(getDateTime());
+                    paymentModel.setCreated_date(getDateTime());
                     dbHelper.insertPayment(paymentModel);
+                    overridePendingTransition(0, 0);
+                    startActivity(getIntent());
+                    overridePendingTransition(0, 0);
                 }
                 myDialog.cancel();
             }
         });
     }
+
     private void setData(TransactionModel t){
         EditText editId = findViewById(R.id.editId);
         EditText editName = findViewById(R.id.editName);
@@ -292,7 +420,12 @@ public class TransactionActivity extends AppCompatActivity {
         }
     }
 
-
+//    @Override
+//    protected void onResume() {
+//
+//        super.onResume();
+//        this.onCreate(null);
+//    }
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
         calculateTotal();
