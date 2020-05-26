@@ -20,12 +20,12 @@
         "source": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\src\\main\\res\\layout\\activity_customer.xml"
     },
     {
-        "merged": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_profile5.jpg.flat",
-        "source": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\src\\main\\res\\drawable\\ic_profile5.jpg"
-    },
-    {
         "merged": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_sale.xml.flat",
         "source": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\src\\main\\res\\layout\\activity_sale.xml"
+    },
+    {
+        "merged": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_profile5.jpg.flat",
+        "source": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\src\\main\\res\\drawable\\ic_profile5.jpg"
     },
     {
         "merged": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",

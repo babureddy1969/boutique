@@ -49,6 +49,7 @@ public class TransactionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sale);
         dbHelper =  new DatabaseHelper(getApplicationContext());
         clear();
+        Button buttonPayment = findViewById(R.id.buttonPayment);
         Bundle b = getIntent().getExtras();
         if (b!=null && b.containsKey("id")) {
             final int value = b.getInt("id");
@@ -56,13 +57,15 @@ public class TransactionActivity extends AppCompatActivity {
             setData(t);
             List<PaymentModel> payments = dbHelper.getPaymentList(value);
             if (t.getBalance()>0) {
-                Button buttonPayment = findViewById(R.id.buttonPayment);
                 buttonPayment.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         callLoginDialog(value);
                     }
                 });
+                buttonPayment.setVisibility(View.VISIBLE);
+            }else{
+                buttonPayment.setVisibility(View.GONE);
             }
             txtEmpty = findViewById(R.id.txtEmpty);
             RecyclerView recyclerView = findViewById(R.id.recyclerView);
@@ -122,6 +125,8 @@ public class TransactionActivity extends AppCompatActivity {
                     textCreatedDate.setText(payments.get(i).getCreated_date());
                 }
             }
+        }else{
+            buttonPayment.setVisibility(View.GONE);
         }
         Button fab = findViewById(R.id.editSave);
         fab.setOnClickListener(new View.OnClickListener() {
