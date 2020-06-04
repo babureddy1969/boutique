@@ -44,6 +44,13 @@ public class MainActivity extends AppCompatActivity {
         adapter = new TransactionAdapter(this);
         txtEmpty = findViewById(R.id.txtEmpty);
         progressBar = findViewById(R.id.progressBar);
+        ImageView imgHome = findViewById(R.id.imgHome);
+        imgHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(v.getContext(),DashboardActivity.class));
+            }
+        });
         //Clear Database
         ImageView imgClear = findViewById(R.id.imgClear);
 

@@ -20,12 +20,12 @@
         "source": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\src\\main\\res\\layout\\activity_customer.xml"
     },
     {
-        "merged": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_sale.xml.flat",
-        "source": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\src\\main\\res\\layout\\activity_sale.xml"
-    },
-    {
         "merged": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_profile5.jpg.flat",
         "source": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\src\\main\\res\\drawable\\ic_profile5.jpg"
+    },
+    {
+        "merged": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_sale.xml.flat",
+        "source": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\src\\main\\res\\layout\\activity_sale.xml"
     },
     {
         "merged": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
@@ -80,12 +80,28 @@
         "source": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
     },
     {
+        "merged": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_items_main.xml.flat",
+        "source": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\src\\main\\res\\layout\\activity_items_main.xml"
+    },
+    {
         "merged": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_employee.xml.flat",
         "source": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\src\\main\\res\\layout\\item_employee.xml"
     },
     {
+        "merged": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\build\\intermediates\\res\\merged\\debug\\menu_main_menu.xml.flat",
+        "source": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\src\\main\\res\\menu\\main_menu.xml"
+    },
+    {
         "merged": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_launcher_background.png.flat",
         "source": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_item.xml.flat",
+        "source": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\src\\main\\res\\layout\\activity_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_items.xml.flat",
+        "source": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\src\\main\\res\\layout\\activity_items.xml"
     },
     {
         "merged": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_profile1.jpg.flat",
@@ -104,12 +120,12 @@
         "source": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\src\\main\\res\\layout\\activity_dashboard.xml"
     },
     {
-        "merged": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_sort.png.flat",
-        "source": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\src\\main\\res\\drawable\\ic_sort.png"
-    },
-    {
         "merged": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_payment.xml.flat",
         "source": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\src\\main\\res\\layout\\activity_payment.xml"
+    },
+    {
+        "merged": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_sort.png.flat",
+        "source": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\src\\main\\res\\drawable\\ic_sort.png"
     },
     {
         "merged": "C:\\Users\\babur\\AndroidStudioProjects\\boutique\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_add.png.flat",

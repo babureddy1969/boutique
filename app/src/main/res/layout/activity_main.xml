@@ -14,6 +14,21 @@
         android:background="@color/colorWhite">
 
         <ImageView
+            android:id="@+id/imgHome"
+            android:layout_width="55dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="false"
+            android:layout_centerVertical="false"
+            android:contentDescription="@string/image"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            android:scrollbarThumbVertical="?attr/homeAsUpIndicator"
+            android:scrollbarTrackVertical="?attr/homeAsUpIndicator"
+            android:src="@drawable/ic_add"
+            app:srcCompat="?attr/homeAsUpIndicator"
+            tools:srcCompat="?attr/homeAsUpIndicator" />
+
+        <ImageView
             android:id="@+id/imgClear"
             android:layout_width="55dp"
             android:layout_height="match_parent"
@@ -27,12 +42,16 @@
             android:src="@drawable/ic_add"
             app:srcCompat="@android:drawable/ic_input_add"
             tools:srcCompat="@android:drawable/ic_input_add" />
+
         <ImageView
             android:id="@+id/imgSort"
             android:layout_width="55dp"
             android:layout_height="match_parent"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="false"
+            android:layout_centerVertical="false"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_toLeftOf="@id/imgClear"
             android:paddingLeft="14dp"
             android:paddingRight="14dp"
             android:src="@drawable/ic_sort" />

@@ -152,46 +152,6 @@ public class TransactionActivity extends AppCompatActivity {
             }
         });
     }
-    public void getCard(RecyclerView recyclerView,Context context){
-
-        CardView cardview = new CardView(context);
-
-        LayoutParams layoutparams = new LayoutParams(
-                LayoutParams.WRAP_CONTENT,
-                LayoutParams.WRAP_CONTENT
-        );
-
-        cardview.setLayoutParams(layoutparams);
-
-        cardview.setRadius(15);
-
-        cardview.setPadding(25, 25, 25, 25);
-
-        cardview.setCardBackgroundColor(Color.MAGENTA);
-
-        cardview.setMaxCardElevation(30);
-
-        cardview.setMaxCardElevation(6);
-
-        TextView textview = new TextView(context);
-
-        textview.setLayoutParams(layoutparams);
-
-        textview.setText("CardView Programmatically");
-
-        textview.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 25);
-
-        textview.setTextColor(Color.WHITE);
-
-        textview.setPadding(25,25,25,25);
-
-        textview.setGravity(Gravity.CENTER);
-
-        cardview.addView(textview);
-
-        recyclerView.addView(cardview);
-
-    }
     private void callLoginDialog(final int value)
     {
         final Dialog myDialog = new Dialog(this);

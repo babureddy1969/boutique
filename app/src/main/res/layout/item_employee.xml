@@ -18,7 +18,7 @@
         android:layout_marginBottom="10dp">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/imgProfile"
+            android:id="@+id/imageItems"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_centerVertical="true"
@@ -48,7 +48,7 @@
             android:layout_toRightOf="@+id/imgProfile">
 
             <TextView
-                android:id="@+id/txtIdTit"
+                android:id="@+id/txtIdTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_centerVertical="true"

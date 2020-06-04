@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import com.example.employeelist.model.CustomerModel;
+import com.example.employeelist.model.ItemModel;
 import com.example.employeelist.model.PaymentModel;
 import com.example.employeelist.model.ReportModel;
 import com.example.employeelist.model.TransactionModel;
@@ -20,6 +21,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     // Table Name
     private static final String TRANS_TABLE = "trans";
     private static final String PAYMENT_TABLE = "payment";
+    private static final String ITEM_TABLE = "item";
 
     // Table columns
     public static final String ID = "id";
@@ -37,12 +39,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String BALANCE = "balance";
     public static final String CREATED_DATE = "created_date";
     public static final String TX_ID = "tx_id";
+    public static final String ITEM_NAME = "item_name";
+    public static final String ITEM_DESC = "item_desc";
+    public static final String ITEM_IMAGE = "item_image";
+    public static final String ITEM_CODE = "item_code";
 
     // Database Information
     static final String DB_NAME = "BOUTIQUE.DB";
 
     // database version
-    static final int DB_VERSION = 8;
+    static final int DB_VERSION = 11;
 
     // Creating table query
     private static String CREATE_TABLE = "create table " + TRANS_TABLE + " (id"
@@ -68,6 +74,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             AMOUNT_PAID + " NUMBER NOT NULL," +
             CREATED_DATE + " TEXT NOT NULL" +
             ");";
+    private static String CREATE_ITEM_TABLE = "create table " + ITEM_TABLE + " (id"
+            + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            ITEM_CODE + " TEXT NOT NULL," +
+            ITEM_NAME + " TEXT NOT NULL," +
+            ITEM_DESC + " TEXT NOT NULL," +
+            ITEM_IMAGE + " TEXT ," +
+            CREATED_DATE + " TEXT NOT NULL" +
+            ");";
     public DatabaseHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }
@@ -77,14 +91,32 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Log.d("CREATING TABLE",db.toString());
         db.execSQL(CREATE_TABLE);
         db.execSQL(CREATE_PAYMENT_TABLE);
+        db.execSQL(CREATE_ITEM_TABLE);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TRANS_TABLE);
+        db.execSQL("DROP TABLE IF EXISTS " + PAYMENT_TABLE);
+        db.execSQL("DROP TABLE IF EXISTS " + ITEM_TABLE);
         onCreate(db);
     }
 
+    public void insertItem(ItemModel t) {
+        SQLiteDatabase db = openDB();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(ITEM_CODE, t.getItemCode());
+        contentValues.put(ITEM_NAME, t.getItemName());
+        contentValues.put(ITEM_DESC, t.getItemDesc());
+        contentValues.put(ITEM_IMAGE, t.getItemImage());
+        contentValues.put(CREATED_DATE, t.getCreated_date());
+        if (t.getId()>0) {
+            String[] args = new String[]{t.getId()+""};
+            db.update(ITEM_TABLE, contentValues, "id=? ", args);
+        }else {
+            long ins = db.insert(ITEM_TABLE, null, contentValues);
+        }
+    }
     public void insertPayment(PaymentModel t) {
         SQLiteDatabase db = openDB();
         ContentValues contentValues = new ContentValues();
@@ -109,6 +141,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(DISCOUNT, t.getDiscount());
         contentValues.put(ADVANCE_PAID, t.getAdvance());
         contentValues.put(BALANCE, t.getBalance());
+        contentValues.put(AMOUNT_PAID, 0);
         contentValues.put(CREATED_DATE, t.getCreatedDate());
         if (t.getId()>0) {
             String[] args = new String[]{t.getId()+""};
@@ -136,6 +169,29 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 t.setCustomerName(cursor.getString(cursor.getColumnIndex(CUSTOMERNAME)));
                 t.setPhone(cursor.getString(cursor.getColumnIndex(PHONE)));
                 list.add(t);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        closeDB(db);
+        return list;
+    }
+    public List<ItemModel> getItemList(String sortBy) {
+        if (sortBy == null) sortBy = ITEM_NAME;
+        SQLiteDatabase db=this.getReadableDatabase();
+        List<ItemModel> list = new ArrayList<>();
+        Cursor cursor = db.query(ITEM_TABLE, null, null, null, null, null, sortBy, null);
+        if (cursor.moveToFirst()) {
+            do {
+                ItemModel t = new ItemModel();
+                t.setId(cursor.getInt(cursor.getColumnIndex(ID)));
+                t.setItemCode(cursor.getString(cursor.getColumnIndex(ITEM_CODE)));
+                t.setItemName(cursor.getString(cursor.getColumnIndex(ITEM_NAME)));
+                t.setItemDesc(cursor.getString(cursor.getColumnIndex(ITEM_DESC)));
+                t.setItemImage(cursor.getString(cursor.getColumnIndex(ITEM_IMAGE)));
+                t.setCreated_date(cursor.getString(cursor.getColumnIndex(CREATED_DATE)));
+                t.setId(cursor.getInt(cursor.getColumnIndex(ID)));
+                list.add(t);
+                Log.d("ITEM "+t.getId(),t.toString());
             } while (cursor.moveToNext());
         }
         cursor.close();
@@ -251,6 +307,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             t.setTotal(t.getSaree()+t.getBlouse()+t.getFall()+t.getKutchu()+t.getOther());
             t.setBalance(t.getTotal()-t.getAdvance()-t.getDiscount()-t.getPaid());
             t.setCreatedDate(cursor.getString(cursor.getColumnIndex(CREATED_DATE)));
+        }
+        cursor.close();
+        closeDB(db);
+        return t;
+    }
+    public ItemModel getItem(int id) {
+        ItemModel t = new ItemModel();
+        SQLiteDatabase db=this.getReadableDatabase();
+        Cursor cursor = db.query(ITEM_TABLE, null, "id=?", new String[]{id+""}, null, null, null, null);
+        if (cursor.moveToFirst()) {
+            t.setId(id);
+            t.setItemCode(cursor.getString(cursor.getColumnIndex(ITEM_CODE)));
+            t.setItemName(cursor.getString(cursor.getColumnIndex(ITEM_NAME)));
+            t.setItemDesc(cursor.getString(cursor.getColumnIndex(ITEM_DESC)));
+            t.setItemImage(cursor.getString(cursor.getColumnIndex(ITEM_IMAGE)));
+            t.setCreated_date(cursor.getString(cursor.getColumnIndex(CREATED_DATE)));
         }
         cursor.close();
         closeDB(db);

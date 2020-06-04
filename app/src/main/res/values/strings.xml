@@ -15,4 +15,9 @@
     <string name="Name">Name </string>
     <string name="Balance">Balance </string>
     <string name="Date">Date </string>
+    <string name="title_activity_item">ItemActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
 </resources>
