@@ -7,6 +7,17 @@
     android:background="@color/colorGrey1"
     tools:context=".ui.MainActivity">
 
+    <TextView
+        android:id="@+id/textTopBar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#00897B"
+        android:gravity="center"
+        android:text="@string/title"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -1039,6 +1039,8 @@ dimen abc_text_size_title_material_toolbar
 dimen action_bar_size
 dimen activity_horizontal_margin
 dimen activity_vertical_margin
+dimen appbar_padding
+dimen appbar_padding_top
 dimen appcompat_dialog_background_inset
 dimen cardview_compat_inset_shadow
 dimen cardview_default_elevation
@@ -1537,6 +1539,7 @@ id center
 id center_horizontal
 id center_vertical
 id chains
+id checkBoxSelectSaree
 id checkbox
 id checked
 id chip
@@ -1597,6 +1600,7 @@ id editTextItemCode
 id editTextItemDesc
 id editTextItemID
 id editTextItemName
+id editTextItemPrice
 id editTotal
 id editTotalTitle
 id edit_query
@@ -1632,11 +1636,11 @@ id ifRoom
 id image
 id imageItems
 id imageView
-id imgClear
 id imgHome
 id imgProfile
-id imgSort
+id imgSale
 id info
+id installmentsTitle
 id invisible
 id italic
 id item
@@ -1805,12 +1809,13 @@ id textCreatedDate8
 id textCreatedDate9
 id textEnd
 id textListItemCode
-id textListItemDesc
-id textListItemId
 id textListItemName
+id textListItemPrice
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
+id textTopBar
+id textTopBar2
 id text_input_end_icon
 id text_input_start_icon
 id textinput_counter
@@ -1822,8 +1827,6 @@ id titleDividerNoCustom
 id titleText
 id title_template
 id top
-id topBar
-id topBarm
 id topPanel
 id touch_outside
 id transition_current_scene
@@ -2094,8 +2097,11 @@ string salary
 string search
 string search_menu_title
 string status_bar_notification_info_overflow
+string tab_text_1
+string tab_text_2
 string title
 string title_activity_item
+string title_activity_tabbed_main
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog

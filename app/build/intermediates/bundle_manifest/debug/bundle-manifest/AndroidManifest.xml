@@ -25,10 +25,19 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true" >
         <activity
+            android:name="com.example.employeelist.TabbedMainActivity"
+            android:label="@string/title_activity_tabbed_main"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name="com.example.employeelist.ui.ItemActivity"
             android:label="@string/title_activity_item"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <!-- <activity android:name=".ui.activity_sale" /> -->
+            android:theme="@style/AppTheme.NoActionBar" /> <!-- <activity android:name=".ui.activity_sale" /> -->
         <activity android:name="com.example.employeelist.ui.DashboardActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,16 +46,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.employeelist.ui.MainActivity" >
-        </activity>
-        <activity android:name="com.example.employeelist.ui.TransactionActivity" >
-        </activity>
-        <activity android:name="com.example.employeelist.ui.CustomerActivity" >
-        </activity>
-        <activity android:name="com.example.employeelist.ui.ReportActivity" >
-        </activity>
-        <activity android:name="com.example.employeelist.ui.ItemsMainActivity" >
-        </activity>
+        <activity android:name="com.example.employeelist.ui.MainActivity" />
+        <activity android:name="com.example.employeelist.ui.TransactionActivity" />
+        <activity android:name="com.example.employeelist.ui.CustomerActivity" />
+        <activity android:name="com.example.employeelist.ui.ReportActivity" />
+        <activity android:name="com.example.employeelist.ui.ItemsMainActivity" />
+
+        <provider
+            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+            android:authorities="com.example.employeelist.lifecycle-process"
+            android:exported="false"
+            android:multiprocess="true" />
     </application>
 
 </manifest>

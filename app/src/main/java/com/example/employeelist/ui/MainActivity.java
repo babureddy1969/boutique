@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         //Clear Database
-        ImageView imgClear = findViewById(R.id.imgClear);
+        ImageView imgClear = findViewById(R.id.imgSale);
 
         imgClear.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,27 +75,27 @@ public class MainActivity extends AppCompatActivity {
         }
 
         //Sort Database
-        ImageView imgSort = findViewById(R.id.imgSort);
-        imgSort.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                syncList.clear();
-                String orderBy = "balance desc";
-                if (sortBy == 1){
-                    orderBy = "id desc";
-                    sortBy = 0;
-                }else{
-                    sortBy = 1;
-                }
-
-                List<TransactionModel> t  = null;
-                if (phone == true)
-                    t  = databaseHelper.getTransactionListByPhone(phoneValue,orderBy);
-                else
-                    t  = databaseHelper.getTransactionList(orderBy);
-                adapter.addList(t);
-            }
-        });
+//        ImageView imgSort = findViewById(R.id.imgSort);
+//        imgSort.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                syncList.clear();
+//                String orderBy = "balance desc";
+//                if (sortBy == 1){
+//                    orderBy = "id desc";
+//                    sortBy = 0;
+//                }else{
+//                    sortBy = 1;
+//                }
+//
+//                List<TransactionModel> t  = null;
+//                if (phone == true)
+//                    t  = databaseHelper.getTransactionListByPhone(phoneValue,orderBy);
+//                else
+//                    t  = databaseHelper.getTransactionList(orderBy);
+//                adapter.addList(t);
+//            }
+//        });
         //RecyclerView
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));

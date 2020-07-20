@@ -43,15 +43,19 @@ public class ItemActivity extends AppCompatActivity  {
         setContentView(R.layout.activity_item);
         dbHelper =  new DatabaseHelper(getApplicationContext());
         Bundle b = getIntent().getExtras();
-        if(b != null && b.containsKey("id")){
+        if(b != null && b.containsKey("id")) {
             int val = b.getInt("id");
-            if (val>=0){
+            if (val >= 0) {
                 ItemModel item = dbHelper.getItem(val);
-                Log.d("SELECTED ITEM"+val,item.toString());
+                Log.d("SELECTED ITEM" + val, item.toString());
                 setData(item);
             }
-        }else
-        clear();
+        }else if(b != null && b.containsKey("ids")){
+                String vals = b.getString("ids");
+                Log.d("SELECTED ITEMs",vals);
+        }else {
+            clear();
+        }
         Button fab = findViewById(R.id.buttonItemSave);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,7 +72,7 @@ public class ItemActivity extends AppCompatActivity  {
             }
         });
 
-        ImageView home = findViewById(R.id.imgHome);
+        ImageView home = findViewById(R.id.buttonHome);
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -82,10 +86,12 @@ public class ItemActivity extends AppCompatActivity  {
         EditText editCode = findViewById(R.id.editTextItemCode);
         EditText editName = findViewById(R.id.editTextItemName);
         EditText editDesc = findViewById(R.id.editTextItemDesc);
+        EditText editPrice = findViewById(R.id.editTextItemPrice);
         editId.setText(String.valueOf(t.getId()));
         editName.setText(t.getItemName());
         editCode.setText(t.getItemCode());
         editDesc.setText(t.getItemDesc());
+        editPrice.setText(String.valueOf(t.getItemPrice()));
     }
     private void saveData(){
         ItemModel t = new ItemModel();
@@ -93,11 +99,14 @@ public class ItemActivity extends AppCompatActivity  {
         TextView editName = findViewById(R.id.editTextItemName);
         EditText editCode = findViewById(R.id.editTextItemCode);
         TextView editDesc = findViewById(R.id.editTextItemDesc);
-
-        t.setId(Integer.parseInt(editId.getText().toString()));
+        TextView editPrice = findViewById(R.id.editTextItemPrice);
+        String tmp = editId.getText().toString().trim();
+        if (TextUtils.isEmpty(tmp)) tmp="0";
+        t.setId(Integer.parseInt(tmp));
         t.setItemName(editName.getText().toString());
         t.setItemCode(editCode.getText().toString());
         t.setItemDesc(editDesc.getText().toString());
+        t.setItemPrice(Integer.parseInt(editPrice.getText().toString()));
         t.setCreated_date(getDateTime());
         dbHelper.insertItem(t);
     }
@@ -112,16 +121,18 @@ public class ItemActivity extends AppCompatActivity  {
         TextView editName = findViewById(R.id.editTextItemName);
         EditText editCode = findViewById(R.id.editTextItemCode);
         TextView editDesc = findViewById(R.id.editTextItemDesc);
+        TextView editPrice = findViewById(R.id.editTextItemPrice);
         editId.setText("0");
         editName.setText("");
         editCode.setText("");
         editDesc.setText("");
-
+        editPrice.setText("0");
     }
     private String validate(){
         TextView editName = findViewById(R.id.editTextItemName);
         EditText editCode = findViewById(R.id.editTextItemCode);
         TextView editDesc = findViewById(R.id.editTextItemDesc);
+        TextView editPrice = findViewById(R.id.editTextItemPrice);
         if (TextUtils.isEmpty(editName.getText().toString().trim())){
             return "Enter Name";
         }
@@ -130,6 +141,9 @@ public class ItemActivity extends AppCompatActivity  {
         }
         if (TextUtils.isEmpty(editDesc.getText().toString().trim())){
             return "Enter item desc";
+        }
+        if (TextUtils.isEmpty(editPrice.getText().toString().trim())){
+            return "Enter item price";
         }
         return "";
     }

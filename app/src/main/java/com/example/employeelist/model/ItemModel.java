@@ -50,9 +50,18 @@ public class ItemModel {
         this.id = id;
     }
 
+    public int getItemPrice() {
+        return itemPrice;
+    }
+
+    public void setItemPrice(int price) {
+        this.itemPrice = price;
+    }
+
     private String itemCode;
     private String itemName;
     private String itemDesc;
+    private int itemPrice;
     private String itemImage;
     private String created_date;
     private int id;
@@ -63,6 +72,7 @@ public class ItemModel {
                 "itemCode'" + itemCode + '\'' +
                 "itemName='" + itemName + '\'' +
                 ", itemDesc='" + itemDesc + '\'' +
+                ", itemPrice='" + itemPrice + '\'' +
                 ", itemImage='" + itemImage + '\'' +
                 ", created_date='" + created_date + '\'' +
                 ", id=" + id +

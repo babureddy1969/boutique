@@ -30,6 +30,7 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.LinearLayout.LayoutParams;
@@ -65,6 +66,7 @@ public class TransactionActivity extends AppCompatActivity {
                 });
                 buttonPayment.setVisibility(View.VISIBLE);
             }else{
+                findViewById(R.id.editSave).setVisibility(View.GONE);
                 buttonPayment.setVisibility(View.GONE);
             }
             txtEmpty = findViewById(R.id.txtEmpty);
@@ -144,13 +146,13 @@ public class TransactionActivity extends AppCompatActivity {
             }
         });
 
-        ImageButton home = findViewById(R.id.buttonHome);
-        home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                    startActivity(new Intent(view.getContext(),DashboardActivity.class));
-            }
-        });
+//        ImageView home = findViewById(R.id.buttonHome);
+//        home.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                    startActivity(new Intent(view.getContext(),DashboardActivity.class));
+//            }
+//        });
     }
     private void callLoginDialog(final int value)
     {

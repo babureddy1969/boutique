@@ -43,12 +43,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String ITEM_DESC = "item_desc";
     public static final String ITEM_IMAGE = "item_image";
     public static final String ITEM_CODE = "item_code";
+    public static final String ITEM_PRICE = "item_price";
 
     // Database Information
     static final String DB_NAME = "BOUTIQUE.DB";
 
     // database version
-    static final int DB_VERSION = 11;
+    static final int DB_VERSION = 12;
 
     // Creating table query
     private static String CREATE_TABLE = "create table " + TRANS_TABLE + " (id"
@@ -79,6 +80,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             ITEM_CODE + " TEXT NOT NULL," +
             ITEM_NAME + " TEXT NOT NULL," +
             ITEM_DESC + " TEXT NOT NULL," +
+            ITEM_PRICE + " NUMBER NOT NULL," +
             ITEM_IMAGE + " TEXT ," +
             CREATED_DATE + " TEXT NOT NULL" +
             ");";
@@ -108,6 +110,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(ITEM_CODE, t.getItemCode());
         contentValues.put(ITEM_NAME, t.getItemName());
         contentValues.put(ITEM_DESC, t.getItemDesc());
+        contentValues.put(ITEM_PRICE, t.getItemPrice());
         contentValues.put(ITEM_IMAGE, t.getItemImage());
         contentValues.put(CREATED_DATE, t.getCreated_date());
         if (t.getId()>0) {
@@ -187,6 +190,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 t.setItemCode(cursor.getString(cursor.getColumnIndex(ITEM_CODE)));
                 t.setItemName(cursor.getString(cursor.getColumnIndex(ITEM_NAME)));
                 t.setItemDesc(cursor.getString(cursor.getColumnIndex(ITEM_DESC)));
+                t.setItemPrice(cursor.getInt(cursor.getColumnIndex(ITEM_PRICE)));
                 t.setItemImage(cursor.getString(cursor.getColumnIndex(ITEM_IMAGE)));
                 t.setCreated_date(cursor.getString(cursor.getColumnIndex(CREATED_DATE)));
                 t.setId(cursor.getInt(cursor.getColumnIndex(ID)));
@@ -321,6 +325,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             t.setItemCode(cursor.getString(cursor.getColumnIndex(ITEM_CODE)));
             t.setItemName(cursor.getString(cursor.getColumnIndex(ITEM_NAME)));
             t.setItemDesc(cursor.getString(cursor.getColumnIndex(ITEM_DESC)));
+            t.setItemPrice(cursor.getInt(cursor.getColumnIndex(ITEM_PRICE)));
             t.setItemImage(cursor.getString(cursor.getColumnIndex(ITEM_IMAGE)));
             t.setCreated_date(cursor.getString(cursor.getColumnIndex(CREATED_DATE)));
         }

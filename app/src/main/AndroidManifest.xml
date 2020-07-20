@@ -5,8 +5,9 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -16,10 +17,19 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".TabbedMainActivity"
+            android:label="@string/title_activity_tabbed_main"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".ui.ItemActivity"
             android:label="@string/title_activity_item"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-<!--        <activity android:name=".ui.activity_sale" />-->
+            android:theme="@style/AppTheme.NoActionBar" /> <!-- <activity android:name=".ui.activity_sale" /> -->
         <activity android:name=".ui.DashboardActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,16 +38,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.MainActivity">
-        </activity>
-        <activity android:name=".ui.TransactionActivity">
-        </activity>
-        <activity android:name=".ui.CustomerActivity">
-        </activity>
-        <activity android:name=".ui.ReportActivity">
-        </activity>
-        <activity android:name=".ui.ItemsMainActivity">
-        </activity>
+        <activity android:name=".ui.MainActivity"></activity>
+        <activity android:name=".ui.TransactionActivity"></activity>
+        <activity android:name=".ui.CustomerActivity"></activity>
+        <activity android:name=".ui.ReportActivity"></activity>
+        <activity android:name=".ui.ItemsMainActivity"></activity>
     </application>
 
 </manifest>

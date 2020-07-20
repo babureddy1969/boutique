@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -21,6 +23,7 @@ import com.example.employeelist.model.MyListData;
 import java.util.List;
 
 public class ItemsMainActivity extends AppCompatActivity {
+    private ItemAdapter adapter ;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -31,7 +34,11 @@ public class ItemsMainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) { switch(item.getItemId()) {
         case R.id.menuAdd:
-            startActivity(new Intent(this,ItemActivity.class));
+            List<Integer> ids = adapter.getSelectedIds();
+            //Log.d("SELECTED IDS",String.valueOf(ids));
+            Intent i = new Intent(this,ItemActivity.class);
+            i.putExtra("ids", String.valueOf(ids));
+            startActivity(i);
             return(true);
         case R.id.menuHome:
             startActivity(new Intent(this,DashboardActivity.class));
@@ -49,8 +56,8 @@ public class ItemsMainActivity extends AppCompatActivity {
         DatabaseHelper db = new DatabaseHelper(getApplicationContext());
 
         List<ItemModel> myListData = db.getItemList(null);
+        adapter = new ItemAdapter(myListData);
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.itemsRecyclerView);
-        ItemAdapter adapter = new ItemAdapter(myListData);
         adapter.setContext(this);
 //        MyListAdapter adapter = new MyListAdapter(myListData);
 //        recyclerView.setHasFixedSize(true);

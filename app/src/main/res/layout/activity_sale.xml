@@ -12,31 +12,6 @@
         android:layout_height="match_parent">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/topBar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="gone">
-
-            <ImageButton
-                android:id="@+id/buttonHome"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="?attr/homeAsUpIndicator" />
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/topBarm"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="#009688"
-                android:gravity="center"
-                android:inputType="none"
-                android:textColor="#FFFFFF"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/editIdTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -53,7 +28,7 @@
             android:id="@+id/editNameTitle"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/topBar"
+            android:layout_below="@id/editIdTitle"
             android:gravity="left">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -68,7 +43,7 @@
             android:id="@+id/editPhoneTitle"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/topBar"
+            android:layout_below="@id/editIdTitle"
             android:layout_toRightOf="@id/editNameTitle"
             android:gravity="right">
 
@@ -78,7 +53,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
                 android:gravity="right"
-                android:hint="@android:string/emptyPhoneNumber"
+                android:hint="Phone"
                 android:inputType="number" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -263,16 +238,28 @@
             android:text="PAYMENT"
             android:textColor="#FFFFFF"
             android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/installmentsTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/buttonPayment"
+            android:text="Installments"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent" >
+
+        </androidx.recyclerview.widget.RecyclerView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardPayment0"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/buttonPayment"
+            android:layout_below="@id/installmentsTitle"
             android:visibility="visible">
 
             <TextView
