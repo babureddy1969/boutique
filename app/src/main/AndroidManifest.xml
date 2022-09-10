@@ -16,8 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+<!--
         <activity
-            android:name=".TabbedMainActivity"
+            android:name=".ui.DashboardActivity"
             android:label="@string/title_activity_tabbed_main"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -26,6 +27,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+-->
         <activity
             android:name=".ui.ItemActivity"
             android:label="@string/title_activity_item"

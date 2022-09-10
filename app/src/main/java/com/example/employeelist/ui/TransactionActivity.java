@@ -289,19 +289,19 @@ public class TransactionActivity extends AppCompatActivity {
         EditText editBalance = findViewById(R.id.editBalance);
         EditText editPaid = findViewById(R.id.editPaid);
         EditText editOther = findViewById(R.id.editOther);
-        editId.setText("0");
+        editId.setText("");
         editName.setText("");
         editPhone.setText("");
-        editTotal.setText("0");
-        editSaree.setText("0");
-        editFall.setText("0");
-        editKutchu.setText("0");
-        editBlouse.setText("0");
-        editOther.setText("0");
-        editAdvance.setText("0");
-        editPaid.setText("0");
-        editBalance.setText("0");
-        editDiscount.setText("0");
+        editTotal.setText("");
+        editSaree.setText("");
+        editFall.setText("");
+        editKutchu.setText("");
+        editBlouse.setText("");
+        editOther.setText("");
+        editAdvance.setText("");
+        editPaid.setText("");
+        editBalance.setText("");
+        editDiscount.setText("");
 
     }
     private String validate(){
