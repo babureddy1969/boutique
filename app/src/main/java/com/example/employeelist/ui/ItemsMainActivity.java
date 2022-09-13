@@ -43,9 +43,11 @@ public class ItemsMainActivity extends AppCompatActivity {
         case R.id.menuHome:
             startActivity(new Intent(this,DashboardActivity.class));
             return(true);
+/*
         case R.id.menuSort:
             startActivity(new Intent(this,ItemActivity.class));
             return(true);
+*/
     }
         return(super.onOptionsItemSelected(item));
     }

@@ -100,6 +100,8 @@ public class TransactionActivity extends AppCompatActivity {
                     TextView textCreatedDate = findViewById(R.id.textCreatedDate4);
                     textAmount.setText(payments.get(i).getAmount() + "");
                     textCreatedDate.setText(payments.get(i).getCreated_date());
+                }
+/*
                 } else if (i == 5) {
                     TextView textAmount = findViewById(R.id.textAmount5);
                     TextView textCreatedDate = findViewById(R.id.textCreatedDate5);
@@ -126,6 +128,7 @@ public class TransactionActivity extends AppCompatActivity {
                     textAmount.setText(payments.get(i).getAmount() + "");
                     textCreatedDate.setText(payments.get(i).getCreated_date());
                 }
+*/
             }
         }else{
             buttonPayment.setVisibility(View.GONE);
@@ -225,7 +228,9 @@ public class TransactionActivity extends AppCompatActivity {
         EditText editPaid = findViewById(R.id.editPaid);
         EditText editOther = findViewById(R.id.editOther);
 
-        t.setId(Integer.parseInt(editId.getText().toString()));
+        if (!TextUtils.isEmpty(editId.getText().toString())) {
+            t.setId(Integer.parseInt(editId.getText().toString()));
+        }
         t.setTotal(Integer.parseInt(editTotal.getText().toString()));
         t.setPhone(editPhone.getText().toString());
         t.setCustomerName(editName.getText().toString().toUpperCase());

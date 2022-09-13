@@ -13,9 +13,11 @@
         android:icon="@android:drawable/ic_input_add"
         android:title="ADD"
         app:showAsAction="always|withText" />
+<!--
     <item
         android:id="@+id/menuSort"
         android:icon="@android:drawable/ic_menu_sort_by_size"
         android:title="SORT"
         app:showAsAction="never"></item>
+-->
 </menu>

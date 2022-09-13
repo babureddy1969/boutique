@@ -42,7 +42,7 @@
                 android:layout_height="match_parent"
                 android:layout_toRightOf="@id/buttonHome"
                 android:background="@color/colorPrimary"
-                android:drawablePadding="15dp"
+                android:drawablePadding="10dp"
                 android:gravity="start|center"
                 android:paddingLeft="15dp"
                 android:paddingRight="15dp"
