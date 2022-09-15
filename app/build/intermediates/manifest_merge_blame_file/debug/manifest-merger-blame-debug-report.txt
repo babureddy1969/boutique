@@ -10,103 +10,106 @@
 9        android:targetSdkVersion="29" />
 9-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml
 10
-11    <uses-permission android:name="android.permission.INTERNET" />
-11-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:6:5-67
-11-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:6:22-64
-12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-12-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:7:5-79
-12-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:7:22-76
-13    <uses-permission android:name="android.permission.CAMERA" />
-13-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:8:5-65
-13-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:8:22-62
-14    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-14-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:9:5-81
-14-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:9:22-78
-15
-16    <application
-16-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:11:5-48:19
-17        android:allowBackup="true"
-17-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:12:9-35
-18        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-18-->[androidx.core:core:1.1.0] /Users/babu/.gradle/caches/transforms-2/files-2.1/34b4ab0d8b65ac74ddd00d45b26dd963/core-1.1.0/AndroidManifest.xml:24:18-86
-19        android:debuggable="true"
-20        android:icon="@mipmap/ic_launcher"
-20-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:13:9-43
-21        android:label="@string/title"
-21-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:14:9-38
-22        android:roundIcon="@mipmap/ic_launcher_round"
-22-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:15:9-54
-23        android:supportsRtl="true"
-23-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:16:9-35
-24        android:testOnly="true"
-25        android:theme="@style/AppTheme"
-25-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:17:9-40
-26        android:usesCleartextTraffic="true" >
-26-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:18:9-44
-27
-28        <!--
-29        <activity
-30            android:name=".ui.DashboardActivity"
-31            android:label="@string/title_activity_tabbed_main"
-32            android:theme="@style/AppTheme.NoActionBar">
-33            <intent-filter>
-34                <action android:name="android.intent.action.MAIN" />
-35
-36                <category android:name="android.intent.category.LAUNCHER" />
-37            </intent-filter>
-38        </activity>
-39        -->
-40        <activity
-40-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:31:9-34:59
-41            android:name="com.example.employeelist.ui.ItemActivity"
-41-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:32:13-44
-42            android:label="@string/title_activity_item"
-42-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:33:13-56
-43            android:theme="@style/AppTheme.NoActionBar" /> <!-- <activity android:name=".ui.activity_sale" /> -->
+11    <uses-permission android:name="android.permission.READ_CONTACTS" />
+11-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:6:5-72
+11-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:6:22-69
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:7:5-67
+12-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:7:22-64
+13    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+13-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:8:5-79
+13-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:8:22-76
+14    <uses-permission android:name="android.permission.CAMERA" />
+14-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:9:5-65
+14-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:9:22-62
+15    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+15-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:10:5-81
+15-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:10:22-78
+16
+17    <application
+17-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:12:5-49:19
+18        android:allowBackup="true"
+18-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:13:9-35
+19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+19-->[androidx.core:core:1.1.0] /Users/babu/.gradle/caches/transforms-2/files-2.1/34b4ab0d8b65ac74ddd00d45b26dd963/core-1.1.0/AndroidManifest.xml:24:18-86
+20        android:debuggable="true"
+21        android:icon="@mipmap/ic_launcher"
+21-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:14:9-43
+22        android:label="@string/title"
+22-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:15:9-38
+23        android:roundIcon="@mipmap/ic_launcher_round"
+23-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:16:9-54
+24        android:supportsRtl="true"
+24-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:17:9-35
+25        android:testOnly="true"
+26        android:theme="@style/AppTheme"
+26-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:18:9-40
+27        android:usesCleartextTraffic="true" >
+27-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:19:9-44
+28
+29        <!--
+30        <activity
+31            android:name=".ui.DashboardActivity"
+32            android:label="@string/title_activity_tabbed_main"
+33            android:theme="@style/AppTheme.NoActionBar">
+34            <intent-filter>
+35                <action android:name="android.intent.action.MAIN" />
+36
+37                <category android:name="android.intent.category.LAUNCHER" />
+38            </intent-filter>
+39        </activity>
+40        -->
+41        <activity
+41-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:32:9-35:59
+42            android:name="com.example.employeelist.ui.ItemActivity"
+42-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:33:13-44
+43            android:label="@string/title_activity_item"
 43-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:34:13-56
-44        <activity android:name="com.example.employeelist.ui.DashboardActivity" >
-44-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:35:9-42:20
-44-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:35:19-55
-45            <intent-filter>
-45-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:36:13-41:29
-46                <action android:name="android.intent.action.MAIN" />
-46-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:37:17-69
-46-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:37:25-66
-47                <action android:name="android.intent.action.VIEW" />
+44            android:theme="@style/AppTheme.NoActionBar" /> <!-- <activity android:name=".ui.activity_sale" /> -->
+44-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:35:13-56
+45        <activity android:name="com.example.employeelist.ui.DashboardActivity" >
+45-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:36:9-43:20
+45-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:36:19-55
+46            <intent-filter>
+46-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:37:13-42:29
+47                <action android:name="android.intent.action.MAIN" />
 47-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:38:17-69
 47-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:38:25-66
-48
-49                <category android:name="android.intent.category.LAUNCHER" />
-49-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:40:17-77
-49-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:40:27-74
-50            </intent-filter>
-51        </activity>
-52        <activity android:name="com.example.employeelist.ui.MainActivity" />
-52-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:43:9-62
-52-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:43:19-50
-53        <activity android:name="com.example.employeelist.ui.TransactionActivity" />
-53-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:44:9-69
-53-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:44:19-57
-54        <activity android:name="com.example.employeelist.ui.CustomerActivity" />
-54-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:45:9-66
-54-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:45:19-54
-55        <activity android:name="com.example.employeelist.ui.ReportActivity" />
-55-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:46:9-64
-55-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:46:19-52
-56        <activity android:name="com.example.employeelist.ui.ItemsMainActivity" />
-56-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:47:9-67
-56-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:47:19-55
-57
-58        <provider
-58-->[androidx.lifecycle:lifecycle-process:2.1.0] /Users/babu/.gradle/caches/transforms-2/files-2.1/84e09e53e13670e6f314ca56c78819f0/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:23:9-27:43
-59            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-59-->[androidx.lifecycle:lifecycle-process:2.1.0] /Users/babu/.gradle/caches/transforms-2/files-2.1/84e09e53e13670e6f314ca56c78819f0/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:24:13-79
-60            android:authorities="com.example.employeelist.lifecycle-process"
-60-->[androidx.lifecycle:lifecycle-process:2.1.0] /Users/babu/.gradle/caches/transforms-2/files-2.1/84e09e53e13670e6f314ca56c78819f0/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:25:13-69
-61            android:exported="false"
-61-->[androidx.lifecycle:lifecycle-process:2.1.0] /Users/babu/.gradle/caches/transforms-2/files-2.1/84e09e53e13670e6f314ca56c78819f0/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:26:13-37
-62            android:multiprocess="true" />
-62-->[androidx.lifecycle:lifecycle-process:2.1.0] /Users/babu/.gradle/caches/transforms-2/files-2.1/84e09e53e13670e6f314ca56c78819f0/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:27:13-40
-63    </application>
-64
-65</manifest>
+48                <action android:name="android.intent.action.VIEW" />
+48-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:39:17-69
+48-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:39:25-66
+49
+50                <category android:name="android.intent.category.LAUNCHER" />
+50-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:41:17-77
+50-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:41:27-74
+51            </intent-filter>
+52        </activity>
+53        <activity android:name="com.example.employeelist.ui.MainActivity" />
+53-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:44:9-62
+53-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:44:19-50
+54        <activity android:name="com.example.employeelist.ui.TransactionActivity" />
+54-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:45:9-69
+54-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:45:19-57
+55        <activity android:name="com.example.employeelist.ui.CustomerActivity" />
+55-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:46:9-66
+55-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:46:19-54
+56        <activity android:name="com.example.employeelist.ui.ReportActivity" />
+56-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:47:9-64
+56-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:47:19-52
+57        <activity android:name="com.example.employeelist.ui.ItemsMainActivity" />
+57-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:48:9-67
+57-->/Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:48:19-55
+58
+59        <provider
+59-->[androidx.lifecycle:lifecycle-process:2.1.0] /Users/babu/.gradle/caches/transforms-2/files-2.1/84e09e53e13670e6f314ca56c78819f0/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:23:9-27:43
+60            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+60-->[androidx.lifecycle:lifecycle-process:2.1.0] /Users/babu/.gradle/caches/transforms-2/files-2.1/84e09e53e13670e6f314ca56c78819f0/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:24:13-79
+61            android:authorities="com.example.employeelist.lifecycle-process"
+61-->[androidx.lifecycle:lifecycle-process:2.1.0] /Users/babu/.gradle/caches/transforms-2/files-2.1/84e09e53e13670e6f314ca56c78819f0/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:25:13-69
+62            android:exported="false"
+62-->[androidx.lifecycle:lifecycle-process:2.1.0] /Users/babu/.gradle/caches/transforms-2/files-2.1/84e09e53e13670e6f314ca56c78819f0/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:26:13-37
+63            android:multiprocess="true" />
+63-->[androidx.lifecycle:lifecycle-process:2.1.0] /Users/babu/.gradle/caches/transforms-2/files-2.1/84e09e53e13670e6f314ca56c78819f0/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:27:13-40
+64    </application>
+65
+66</manifest>

@@ -100,6 +100,10 @@
         "source": "/Users/babu/Desktop/logistimo/boutique/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
     },
     {
+        "merged": "/Users/babu/Desktop/logistimo/boutique/app/build/intermediates/res/merged/debug/layout_item_transaction.xml.flat",
+        "source": "/Users/babu/Desktop/logistimo/boutique/app/src/main/res/layout/item_transaction.xml"
+    },
+    {
         "merged": "/Users/babu/Desktop/logistimo/boutique/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher_round.png.flat",
         "source": "/Users/babu/Desktop/logistimo/boutique/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
     },
@@ -110,10 +114,6 @@
     {
         "merged": "/Users/babu/Desktop/logistimo/boutique/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_launcher_background.png.flat",
         "source": "/Users/babu/Desktop/logistimo/boutique/app/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_launcher_background.png"
-    },
-    {
-        "merged": "/Users/babu/Desktop/logistimo/boutique/app/build/intermediates/res/merged/debug/layout_item_employee.xml.flat",
-        "source": "/Users/babu/Desktop/logistimo/boutique/app/src/main/res/layout/item_employee.xml"
     },
     {
         "merged": "/Users/babu/Desktop/logistimo/boutique/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_launcher_background.png.flat",

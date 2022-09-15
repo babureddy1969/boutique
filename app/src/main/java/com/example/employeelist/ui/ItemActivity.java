@@ -1,7 +1,9 @@
 package com.example.employeelist.ui;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Picture;
+import android.net.Uri;
 import android.os.Bundle;
 
 import com.example.employeelist.R;
@@ -15,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.provider.ContactsContract;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;

@@ -1,9 +1,13 @@
 package com.example.employeelist.ui;
 
+import android.Manifest;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 
 import com.example.employeelist.R;
@@ -16,9 +20,12 @@ import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.provider.ContactsContract;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.TypedValue;
@@ -74,6 +81,7 @@ public class TransactionActivity extends AppCompatActivity {
             recyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
 
 //            Log.d("PAYMENT COUNT",payments.size()+"");
+/*
             for(int i=0;i<payments.size();i++){
                 if (i == 0) {
                     TextView textAmount = findViewById(R.id.textAmount0);
@@ -100,8 +108,6 @@ public class TransactionActivity extends AppCompatActivity {
                     TextView textCreatedDate = findViewById(R.id.textCreatedDate4);
                     textAmount.setText(payments.get(i).getAmount() + "");
                     textCreatedDate.setText(payments.get(i).getCreated_date());
-                }
-/*
                 } else if (i == 5) {
                     TextView textAmount = findViewById(R.id.textAmount5);
                     TextView textCreatedDate = findViewById(R.id.textCreatedDate5);
@@ -128,10 +134,16 @@ public class TransactionActivity extends AppCompatActivity {
                     textAmount.setText(payments.get(i).getAmount() + "");
                     textCreatedDate.setText(payments.get(i).getCreated_date());
                 }
-*/
             }
-        }else{
+*/
+        }else {
             buttonPayment.setVisibility(View.GONE);
+            if (!checkContactPermission()) {
+                requestContactPermission();
+            }
+            Intent contactPickerIntent = new Intent(Intent.ACTION_PICK,
+                    ContactsContract.CommonDataKinds.Phone.CONTENT_URI);
+            startActivityForResult(contactPickerIntent, 1);
         }
         Button fab = findViewById(R.id.editSave);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -156,6 +168,13 @@ public class TransactionActivity extends AppCompatActivity {
 //                    startActivity(new Intent(view.getContext(),DashboardActivity.class));
 //            }
 //        });
+    }
+    private boolean checkContactPermission(){
+        return ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS) == PackageManager.PERMISSION_GRANTED;
+    }
+    private void requestContactPermission () {
+        String[] permission = {Manifest.permission.READ_CONTACTS};
+        ActivityCompat.requestPermissions(this,permission,1);
     }
     private void callLoginDialog(final int value)
     {
@@ -402,5 +421,39 @@ public class TransactionActivity extends AppCompatActivity {
     public boolean dispatchKeyEvent(KeyEvent event) {
         calculateTotal();
         return super.dispatchKeyEvent(event);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode,resultCode,data);
+
+
+        // check whether the result is ok
+        if (resultCode == RESULT_OK) {
+            // Check for the request code, we might be usign multiple startActivityForReslut
+            switch (requestCode) {
+                case 1:
+                    Cursor cursor1 = null;
+                    try {
+                        String phoneNo = null ;
+                        String name = null;
+                        Uri uri = data.getData();
+                        cursor1 = getContentResolver().query(uri, null, null, null, null);
+                        if (cursor1.moveToFirst()) {
+                            phoneNo = cursor1.getString(cursor1.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
+                            name = cursor1.getString(cursor1.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
+                            ((EditText)findViewById(R.id.editPhone)).setText(phoneNo);
+                            ((EditText)findViewById(R.id.editName)).setText(name);
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    } finally {
+                        if (!cursor1.isClosed()) cursor1.close();
+                }
+                    break;
+            }
+        } else {
+            Log.e("MainActivity", "Failed to pick contact");
+        }
     }
 }

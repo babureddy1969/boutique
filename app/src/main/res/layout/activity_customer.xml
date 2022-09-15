@@ -41,7 +41,7 @@
             android:textSize="20sp" />
 
         <RelativeLayout
-            android:id="@+id/rlId"
+            android:id="@+id/txtTxDateTitle"
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_below="@+id/txtName"
