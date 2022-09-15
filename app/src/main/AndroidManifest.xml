@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.employeelist">
+    package="com.example.boutique">
 
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -30,10 +30,10 @@
         </activity>
 -->
         <activity
-            android:name=".ui.ItemActivity"
+            android:name="com.example.boutique.ui.ItemActivity"
             android:label="@string/title_activity_item"
             android:theme="@style/AppTheme.NoActionBar" /> <!-- <activity android:name=".ui.activity_sale" /> -->
-        <activity android:name=".ui.DashboardActivity">
+        <activity android:name="com.example.boutique.ui.DashboardActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
@@ -41,11 +41,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.MainActivity"></activity>
-        <activity android:name=".ui.TransactionActivity"></activity>
-        <activity android:name=".ui.CustomerActivity"></activity>
-        <activity android:name=".ui.ReportActivity"></activity>
-        <activity android:name=".ui.ItemsMainActivity"></activity>
+        <activity android:name="com.example.boutique.ui.MainActivity"></activity>
+        <activity android:name="com.example.boutique.ui.TransactionActivity"></activity>
+        <activity android:name="com.example.boutique.ui.CustomerActivity"></activity>
+        <activity android:name="com.example.boutique.ui.ReportActivity"></activity>
+        <activity android:name="com.example.boutique.ui.ItemsMainActivity"></activity>
     </application>
 
 </manifest>

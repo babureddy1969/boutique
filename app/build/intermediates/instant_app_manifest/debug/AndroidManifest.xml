@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.employeelist"
+    package="com.example.boutique"
     android:targetSandboxVersion="2"
     android:versionCode="1"
     android:versionName="1.0" >
@@ -40,10 +40,10 @@
         </activity>
         -->
         <activity
-            android:name="com.example.employeelist.ui.ItemActivity"
+            android:name="com.example.boutique.ui.ItemActivity"
             android:label="@string/title_activity_item"
             android:theme="@style/AppTheme.NoActionBar" /> <!-- <activity android:name=".ui.activity_sale" /> -->
-        <activity android:name="com.example.employeelist.ui.DashboardActivity" >
+        <activity android:name="com.example.boutique.ui.DashboardActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
@@ -51,15 +51,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.employeelist.ui.MainActivity" />
-        <activity android:name="com.example.employeelist.ui.TransactionActivity" />
-        <activity android:name="com.example.employeelist.ui.CustomerActivity" />
-        <activity android:name="com.example.employeelist.ui.ReportActivity" />
-        <activity android:name="com.example.employeelist.ui.ItemsMainActivity" />
+        <activity android:name="com.example.boutique.ui.MainActivity" />
+        <activity android:name="com.example.boutique.ui.TransactionActivity" />
+        <activity android:name="com.example.boutique.ui.CustomerActivity" />
+        <activity android:name="com.example.boutique.ui.ReportActivity" />
+        <activity android:name="com.example.boutique.ui.ItemsMainActivity" />
 
         <provider
             android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-            android:authorities="com.example.employeelist.lifecycle-process"
+            android:authorities="com.example.boutique.lifecycle-process"
             android:exported="false"
             android:multiprocess="true" />
     </application>

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:isScrollContainer="true"
     app:layout_scrollFlags="scroll"
-    tools:context=".ui.TransactionActivity">
+    tools:context="com.example.boutique.ui.TransactionActivity">
 
     <RelativeLayout
         android:id="@+id/relativeID"

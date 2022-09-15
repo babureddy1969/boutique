@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".ui.ItemActivity">
+    tools:context="com.example.boutique.ui.ItemActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout"

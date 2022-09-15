@@ -45,7 +45,7 @@ INJECTED from /Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifes
 INJECTED from /Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:2:1-51:12
 INJECTED from /Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:2:1-51:12
 	package
-		ADDED from /Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:4:5-39
+		ADDED from /Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:4:5-35
 		INJECTED from /Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml
 	android:versionName
@@ -112,18 +112,18 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/babu
 		ADDED from /Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:18:9-40
 	android:usesCleartextTraffic
 		ADDED from /Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:19:9-44
-activity#com.example.employeelist.ui.ItemActivity
+activity#com.example.boutique.ui.ItemActivity
 ADDED from /Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:32:9-35:59
 	android:label
 		ADDED from /Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:34:13-56
 	android:theme
 		ADDED from /Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:35:13-56
 	android:name
-		ADDED from /Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:33:13-44
-activity#com.example.employeelist.ui.DashboardActivity
+		ADDED from /Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:33:13-64
+activity#com.example.boutique.ui.DashboardActivity
 ADDED from /Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:36:9-43:20
 	android:name
-		ADDED from /Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:36:19-55
+		ADDED from /Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:36:19-75
 intent-filter#action:name:android.intent.action.MAIN+action:name:android.intent.action.VIEW+category:name:android.intent.category.LAUNCHER
 ADDED from /Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:37:13-42:29
 action#android.intent.action.MAIN
@@ -138,26 +138,26 @@ category#android.intent.category.LAUNCHER
 ADDED from /Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:41:17-77
 	android:name
 		ADDED from /Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:41:27-74
-activity#com.example.employeelist.ui.MainActivity
-ADDED from /Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:44:9-62
+activity#com.example.boutique.ui.MainActivity
+ADDED from /Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:44:9-82
 	android:name
-		ADDED from /Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:44:19-50
-activity#com.example.employeelist.ui.TransactionActivity
-ADDED from /Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:45:9-69
+		ADDED from /Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:44:19-70
+activity#com.example.boutique.ui.TransactionActivity
+ADDED from /Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:45:9-89
 	android:name
-		ADDED from /Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:45:19-57
-activity#com.example.employeelist.ui.CustomerActivity
-ADDED from /Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:46:9-66
+		ADDED from /Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:45:19-77
+activity#com.example.boutique.ui.CustomerActivity
+ADDED from /Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:46:9-86
 	android:name
-		ADDED from /Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:46:19-54
-activity#com.example.employeelist.ui.ReportActivity
-ADDED from /Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:47:9-64
+		ADDED from /Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:46:19-74
+activity#com.example.boutique.ui.ReportActivity
+ADDED from /Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:47:9-84
 	android:name
-		ADDED from /Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:47:19-52
-activity#com.example.employeelist.ui.ItemsMainActivity
-ADDED from /Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:48:9-67
+		ADDED from /Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:47:19-72
+activity#com.example.boutique.ui.ItemsMainActivity
+ADDED from /Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:48:9-87
 	android:name
-		ADDED from /Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:48:19-55
+		ADDED from /Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml:48:19-75
 uses-sdk
 INJECTED from /Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/babu/Desktop/logistimo/boutique/app/src/main/AndroidManifest.xml

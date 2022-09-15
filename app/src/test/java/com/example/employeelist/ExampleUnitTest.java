@@ -1,4 +1,4 @@
-package com.example.employeelist;
+package com.example.boutique;
 
 import org.junit.Test;
 

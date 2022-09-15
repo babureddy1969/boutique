@@ -8,4 +8,4 @@
     android:layout_height="match_parent"
     android:scrollbars="vertical"
     android:id="@+id/itemsRecyclerView"
-    tools:context="ui.ItemsMainActivity"/>
+    tools:context="com.example.boutique.ui.ItemsMainActivity"/>

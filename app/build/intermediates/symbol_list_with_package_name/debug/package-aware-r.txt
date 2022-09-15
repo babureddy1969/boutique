@@ -1,4 +1,4 @@
-com.example.employeelist
+com.example.boutique
 anim abc_fade_in
 anim abc_fade_out
 anim abc_grow_fade_in_from_bottom
@@ -1712,6 +1712,7 @@ id right_side
 id rlSalary
 id rlTop
 id rl_custom_layout
+id rl_custom_layout_payments
 id rounded
 id rrDate
 id save_non_transition_alpha
