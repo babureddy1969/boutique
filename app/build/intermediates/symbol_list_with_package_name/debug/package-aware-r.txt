@@ -1624,11 +1624,8 @@ id icon
 id icon_group
 id ifRoom
 id image
-id imageItems
 id imageView
-id imgHome
 id imgProfile
-id imgSale
 id info
 id invisible
 id italic
@@ -1644,7 +1641,6 @@ id linearLayout
 id listMode
 id list_item
 id masked
-id menuAdd
 id menuHome
 id message
 id middle
@@ -1804,15 +1800,16 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id txtBalance
+id txtBalanceTitle
 id txtClear
 id txtDate
 id txtEmpty
 id txtId
-id txtIdTit
 id txtIdTitle
 id txtMonth
 id txtName
 id txtPayment
+id txtPayments
 id txtPhone
 id txtTotal
 id txtTxDateTitle
@@ -2071,6 +2068,7 @@ string tab_text_1
 string tab_text_2
 string title
 string title_activity_item
+string title_activity_payments
 string title_activity_tabbed_main
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light

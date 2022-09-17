@@ -280,23 +280,30 @@ public class TransactionActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
     }
-
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-//        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-//        if (id == R.id.action_search) {
-//            return true;
-//        }
-
-        return super.onOptionsItemSelected(item);
+    public boolean onOptionsItemSelected(MenuItem item) { switch(item.getItemId()) {
+/*
+        case R.id.menuAdd:
+            List<Integer> ids = adapter.getSelectedIds();
+            //Log.d("SELECTED IDS",String.valueOf(ids));
+            Intent i = new Intent(this,ItemActivity.class);
+            i.putExtra("ids", String.valueOf(ids));
+            startActivity(i);
+            return(true);
+*/
+        case R.id.menuHome:
+            startActivity(new Intent(this,DashboardActivity.class));
+            return(true);
+/*
+        case R.id.menuSort:
+            startActivity(new Intent(this,ItemActivity.class));
+            return(true);
+*/
+    }
+        return(super.onOptionsItemSelected(item));
     }
 
     private void calculateTotal(){
@@ -343,13 +350,6 @@ public class TransactionActivity extends AppCompatActivity {
             editBalance.setText(String.valueOf(total-advance-discount-paid));
         }
     }
-
-//    @Override
-//    protected void onResume() {
-//
-//        super.onResume();
-//        this.onCreate(null);
-//    }
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
         calculateTotal();

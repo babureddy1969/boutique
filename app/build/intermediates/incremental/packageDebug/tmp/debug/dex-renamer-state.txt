@@ -1,4 +1,4 @@
-#Thu Sep 15 23:51:19 IST 2022
+#Sat Sep 17 18:56:48 IST 2022
 base.0=/Users/babu/Desktop/logistimo/boutique/app/build/intermediates/dex/debug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

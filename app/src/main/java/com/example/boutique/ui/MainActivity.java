@@ -46,22 +46,22 @@ public class MainActivity extends AppCompatActivity {
         adapter = new TransactionAdapter(this);
         txtEmpty = findViewById(R.id.txtEmpty);
         progressBar = findViewById(R.id.progressBar);
-        ImageView imgHome = findViewById(R.id.imgHome);
-        imgHome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(v.getContext(),DashboardActivity.class));
-            }
-        });
+//        ImageView imgHome = findViewById(R.id.imgHome);
+//        imgHome.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(v.getContext(),DashboardActivity.class));
+//            }
+//        });
         //Clear Database
-        ImageView imgClear = findViewById(R.id.imgSale);
-
-        imgClear.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(v.getContext(),TransactionActivity.class));
-            }
-        });
+//        ImageView imgClear = findViewById(R.id.imgSale);
+//
+//        imgClear.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(v.getContext(),TransactionActivity.class));
+//            }
+//        });
         Bundle b = getIntent().getExtras();
 
         List<TransactionModel> t  =null;

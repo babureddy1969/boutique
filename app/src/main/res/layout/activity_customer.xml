@@ -17,15 +17,15 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/imageItems"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:src="@drawable/ic_profile1"
-            app:civ_border_color="#FF000000" />
+<!--        <de.hdodenhof.circleimageview.CircleImageView-->
+<!--            android:id="@+id/imageItems"-->
+<!--            android:layout_width="60dp"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:layout_centerVertical="true"-->
+<!--            android:layout_marginLeft="10dp"-->
+<!--            android:layout_marginRight="10dp"-->
+<!--            android:src="@drawable/ic_profile1"-->
+<!--            app:civ_border_color="#FF000000" />-->
 
         <TextView
             android:id="@+id/txtName"
@@ -64,7 +64,7 @@
                 android:layout_width="130dp"
                 android:layout_height="match_parent"
                 android:layout_centerVertical="true"
-                android:layout_toRightOf="@+id/txtIdTit"
+                android:layout_toRightOf="@+id/txtIdTitle"
                 android:ellipsize="end"
                 android:gravity="start|center"
                 android:maxLength="20"

@@ -13,6 +13,7 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/title"
+        android:gravity="center"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
@@ -33,6 +34,10 @@
             android:name="com.example.boutique.ui.ItemActivity"
             android:label="@string/title_activity_item"
             android:theme="@style/AppTheme.NoActionBar" /> <!-- <activity android:name=".ui.activity_sale" /> -->
+        <activity
+            android:name="com.example.boutique.ui.PaymentActivity"
+            android:label="@string/title_activity_payments"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name="com.example.boutique.ui.DashboardActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

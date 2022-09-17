@@ -29,6 +29,7 @@ public class ItemsMainActivity extends AppCompatActivity {
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) { switch(item.getItemId()) {
+/*
         case R.id.menuAdd:
             List<Integer> ids = adapter.getSelectedIds();
             //Log.d("SELECTED IDS",String.valueOf(ids));
@@ -36,6 +37,7 @@ public class ItemsMainActivity extends AppCompatActivity {
             i.putExtra("ids", String.valueOf(ids));
             startActivity(i);
             return(true);
+*/
         case R.id.menuHome:
             startActivity(new Intent(this,DashboardActivity.class));
             return(true);
